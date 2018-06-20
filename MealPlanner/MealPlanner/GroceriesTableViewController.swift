@@ -133,6 +133,19 @@ class GroceriesTableViewController: UITableViewController {
         
         return mealType
     }
+    
+    //be able to check the boxes
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+            } else {
+                cell.accessoryType = .checkmark
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

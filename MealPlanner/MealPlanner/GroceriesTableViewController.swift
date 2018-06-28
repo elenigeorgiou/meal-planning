@@ -14,7 +14,7 @@ class GroceriesTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+      //   self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -34,14 +34,15 @@ class GroceriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (section == 4) {
-            return 4
-        }
+       
         if (section == 2) {
             return 4
         }
         if (section == 3) {
             return 2
+        }
+        if (section == 1) {
+            return 5
         }
         return 1
     }
@@ -56,7 +57,27 @@ class GroceriesTableViewController: UITableViewController {
         }
         
         if (indexPath.section == 1) {
-            cell.textLabel?.text = "Whole Wheat Bread - 20 slices - $2.99"
+            if (indexPath.row == 0) {
+                cell.textLabel?.text = "Mayonnaise - 1 jar - $4.99"
+            }
+            
+            if (indexPath.row == 1) {
+                cell.textLabel?.text = "Mustard - 1 jar - $4.99"
+            }
+            
+            if (indexPath.row == 2) {
+                cell.textLabel?.text = "Salt - 93 grams - $3.23"
+            }
+            
+            if (indexPath.row == 3) {
+                cell.textLabel?.text = "Pepper - 93 grams - $4.23"
+            }
+            
+            if (indexPath.row == 4) {
+                
+            
+                cell.textLabel?.text = "Whole Wheat Bread - 20 slices - $2.99"
+            }
         }
         
         if (indexPath.section == 2) {
@@ -88,23 +109,14 @@ class GroceriesTableViewController: UITableViewController {
         }
         
         if (indexPath.section == 4) {
+           
+        }
+        if (indexPath.section == 4) {
             if (indexPath.row == 0) {
-                cell.textLabel?.text = "Mayonnaise - 1 jar - $4.99"
-            }
-            
-            if (indexPath.row == 1) {
-                cell.textLabel?.text = "Mustard - 1 jar - $4.99"
-            }
-            
-            if (indexPath.row == 2) {
-                cell.textLabel?.text = "Salt - 93 grams - $3.23"
-            }
-            
-            if (indexPath.row == 3) {
-                cell.textLabel?.text = "Pepper - 93 grams - $4.23"
+                cell.textLabel?.text = "Peanut Butter - 1 jar"
             }
         }
-
+        
         return cell
     }
  
@@ -128,7 +140,7 @@ class GroceriesTableViewController: UITableViewController {
         }
         
         if (section == 4) {
-            mealType = "Meat"
+            mealType = "Have"
         }
         
         return mealType
@@ -145,8 +157,13 @@ class GroceriesTableViewController: UITableViewController {
                 cell.accessoryType = .checkmark
             }
         }
+        
+
     }
 
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

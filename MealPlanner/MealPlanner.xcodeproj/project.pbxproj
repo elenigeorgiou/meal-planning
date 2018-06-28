@@ -14,10 +14,10 @@
 		1435C6A420CAFB1800F72851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1435C6A220CAFB1800F72851 /* LaunchScreen.storyboard */; };
 		1435C6AF20CAFB1800F72851 /* MealPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6AE20CAFB1800F72851 /* MealPlannerTests.swift */; };
 		1435C6BA20CAFB1800F72851 /* MealPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */; };
+		148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148569F420E405790077CC90 /* ChooseMealViewController.swift */; };
 		9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */; };
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
 		96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */; };
-		96DEEECD20D8C70F00945186 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DEEECC20D8C70F00945186 /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		1435C6B520CAFB1800F72851 /* MealPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerUITests.swift; sourceTree = "<group>"; };
 		1435C6BB20CAFB1800F72851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148569F420E405790077CC90 /* ChooseMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMealViewController.swift; sourceTree = "<group>"; };
 		9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
 		96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		96DEEECC20D8C70F00945186 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,9 @@
 				1435C6A020CAFB1800F72851 /* Assets.xcassets */,
 				1435C6A220CAFB1800F72851 /* LaunchScreen.storyboard */,
 				1435C6A520CAFB1800F72851 /* Info.plist */,
-				96DEEECC20D8C70F00945186 /* Hero.swift */,
 				9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */,
 				9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */,
+				148569F420E405790077CC90 /* ChooseMealViewController.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -280,9 +280,9 @@
 			files = (
 				1435C69C20CAFB1600F72851 /* ViewController.swift in Sources */,
 				1435C69A20CAFB1600F72851 /* AppDelegate.swift in Sources */,
+				148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */,
 				9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */,
 				9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */,
-				96DEEECD20D8C70F00945186 /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

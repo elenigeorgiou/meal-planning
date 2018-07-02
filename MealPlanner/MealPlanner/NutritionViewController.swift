@@ -17,6 +17,10 @@ class NutritionViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       // collectionView = UICollectionView()
+    //    super.view.addSubview(collectionView)
        
         //self.clearsSelectionOnViewWillAppear = false
         // Do any additional setup after loading the view.

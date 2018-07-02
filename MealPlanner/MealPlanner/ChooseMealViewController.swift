@@ -121,9 +121,20 @@ class ChooseMealsController: UITableViewController {
 //
 //
 //    }
-    
+    var breakfastMeal:String = ""
+    var lunchMeal:String = ""
+    var dinnerMeal:String = ""
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableView.allowsMultipleSelection = true
+        if indexPath.section == 0 {
+            breakfastMeal = self.breakfast[indexPath.row]
+        }
+        if indexPath.section == 1 {
+            lunchMeal = self.lunch[indexPath.row]
+        }
+        if indexPath.section == 2 {
+            dinnerMeal = self.dinner[indexPath.row]
+        }
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
             for selectedIndexPath in selectedIndexPaths {
                 if selectedIndexPath.section == indexPath.section {
@@ -134,6 +145,14 @@ class ChooseMealsController: UITableViewController {
         return indexPath
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CreateMealPlanSegue" {
+                let controller = segue.destination as! MealPlanNavigationController
+                let mealsChosen = [breakfastMeal, lunchMeal, dinnerMeal]
+                controller.chosenMeals = mealsChosen
+            }
+        
+    }
     
     
     /*

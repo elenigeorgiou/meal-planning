@@ -10,6 +10,8 @@ import UIKit
 
 class MealPlanTableViewController: UITableViewController {
     
+    
+    var chosenMeals : [String] = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -21,7 +23,7 @@ class MealPlanTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,15 +47,15 @@ class MealPlanTableViewController: UITableViewController {
 
         // Configure the cell...
         if (indexPath.section == 0) {
-            cell.textLabel?.text = "Scrambled Egg Sandwich"
+            cell.textLabel?.text = chosenMeals[0] //"Scrambled Egg Sandwich"
         }
         
         if (indexPath.section == 1) {
-            cell.textLabel?.text = "Tuna Fish Melt Quesadilla"
+            cell.textLabel?.text = chosenMeals[1] // "Tuna Fish Melt Quesadilla"
         }
         
         if (indexPath.section == 2) {
-            cell.textLabel?.text = "Herb-Crusted Salmon"
+            cell.textLabel?.text = chosenMeals[2] //"Herb-Crusted Salmon"
         }
 
         return cell

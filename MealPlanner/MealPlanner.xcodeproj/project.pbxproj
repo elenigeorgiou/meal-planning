@@ -17,6 +17,7 @@
 		1435C6AF20CAFB1800F72851 /* MealPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6AE20CAFB1800F72851 /* MealPlannerTests.swift */; };
 		1435C6BA20CAFB1800F72851 /* MealPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */; };
 		148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148569F420E405790077CC90 /* ChooseMealViewController.swift */; };
+		14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */; };
 		9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */; };
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
 		96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */; };
@@ -56,6 +57,7 @@
 		1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerUITests.swift; sourceTree = "<group>"; };
 		1435C6BB20CAFB1800F72851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		148569F420E405790077CC90 /* ChooseMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMealViewController.swift; sourceTree = "<group>"; };
+		14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanNavigationController.swift; sourceTree = "<group>"; };
 		9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
 		96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 				9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */,
 				9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */,
 				148569F420E405790077CC90 /* ChooseMealViewController.swift */,
+				14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				1407123420E6683000A9F276 /* NutritionViewController.swift in Sources */,
 				9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */,
 				9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */,
+				14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

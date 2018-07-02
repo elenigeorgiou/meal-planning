@@ -53,7 +53,7 @@ class MealPlanTableViewController: UITableViewController {
         }
         
         if (indexPath.section == 2) {
-            cell.textLabel?.text = "Dinner Rotisserie Chicken Salad"
+            cell.textLabel?.text = "Herb-Crusted Salmon"
         }
 
         return cell
@@ -76,23 +76,7 @@ class MealPlanTableViewController: UITableViewController {
         
         return mealType
     }
- //   @IBAction func pressedMeal(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-//        var text : String = ""
-//        if (indexPath.section == 0) {
-//            text = "Scrambled Egg Sandwich"
-//        }
-//
-//        if (indexPath.section == 1) {
-//            text = "Tuna Fish Melt Quesadilla"
-//        }
-//
-//        if (indexPath.section == 2) {
-//           text = "Dinner Rotisserie Chicken Salad"
-//        }
-//        self.performSegue(withIdentifier: "RecipeSegue", sender: text)
-//    }
-//
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RecipeSegue" {
             if let indexPath =  tableView.indexPathForSelectedRow {
@@ -106,7 +90,7 @@ class MealPlanTableViewController: UITableViewController {
                 }
                 
                 if (indexPath.section == 2) {
-                    text = "Dinner Rotisserie Chicken Salad"
+                    text = "Herb-Crusted Salmon"
                 }
                 let controller = segue.destination as! RecipeViewController
                 let chosemeal = text

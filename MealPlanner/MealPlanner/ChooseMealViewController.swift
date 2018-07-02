@@ -29,8 +29,8 @@ class ChooseMealsController: UITableViewController {
        "Broiled Shrimp with Lemon, Garlic and Spinach",
         "Dinner Rotisserie Chicken Salad",
         "Herb-Crusted Salmon",
-          "Chicken Parm Sub",
-          "Grilled Chicken"
+        "Chicken Parm Sub",
+        "Grilled Chicken"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()

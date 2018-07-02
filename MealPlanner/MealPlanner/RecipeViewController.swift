@@ -11,8 +11,10 @@ import UIKit
 
 class RecipeViewController : UIViewController {
     
-    let instructionsData = ["Scrambled Egg Sandwich": "1. Flip the egg and you're done \n2. Put some toppings"]
-    let nutritionData = ["Scrambled Egg Sandwich" : ["protein": "45 g", "carbs":"40 g", "fat": "10 g", "calories":"300 kcal"]]
+    var mealChosen : String = "" //default
+    let instructionsData = ["Scrambled Egg Sandwich": "1. Flip the egg and you're done \n2. Put some toppings", "Tuna Fish Melt Quesadilla"  : "1. made it", "Dinner Rotisserie Chicken Salad" : "2 3 " ]
+    let nutritionData = ["Scrambled Egg Sandwich" : ["protein": "45 g", "carbs":"70 g", "fat": "20 g", "calories":"598 kcal"], "Tuna Fish Melt Quesadilla" : ["protein": "45 g", "carbs":"40 g", "fat": "10 g", "calories":"300 kcal"], "Dinner Rotisserie Chicken Salad" : ["protein": "55 g", "carbs":"32 g", "fat": "14 g", "calories":"356 kcal"]]
+    let imageData = ["Scrambled Egg Sandwich" : "eggs.jpg", "Tuna Fish Melt Quesadilla": "tuna.jpg", "Dinner Rotisserie Chicken Salad": "chicken.jpg"]
   //  let nutritionLabel = UILabel(accessibilityIdentifier:"nutrition")
 
     @IBOutlet weak var recipeLabel: UILabel!
@@ -22,7 +24,8 @@ class RecipeViewController : UIViewController {
     @IBOutlet weak var nutritionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let recipe : String! = "Scrambled Egg Sandwich"
+        let recipe : String! = mealChosen
+        print(recipe)
         recipeLabel.text = recipe
         instructionLabel.text = instructionsData[recipe]
         let  protein : String! = nutritionData[recipe]!["protein"]

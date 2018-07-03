@@ -11,14 +11,15 @@ import UIKit
 
 class MealPlanNavigationController : UINavigationController {
     
-    
+     var chosenMeals : [String] = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let controller = segue.destination as! MealPlanTableViewController
             controller.chosenMeals = chosenMeals
+            self.navigationController?.pushViewController(controller, animated: true)
             print(chosenMeals)
     }
-    var chosenMeals : [String] = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
+   
     
     
 }

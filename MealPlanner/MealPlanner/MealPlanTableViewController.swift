@@ -12,12 +12,34 @@ class MealPlanTableViewController: UITableViewController {
     
     
     var chosenMeals : [String] = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
+
+    
+    var  protein : IntegerLiteralType! = 0
+    var carbs :IntegerLiteralType! = 0
+    var fats : IntegerLiteralType! = 0
+    var cals : IntegerLiteralType! = 0
+    var goalprotein : IntegerLiteralType! = 0
+    var goalcarbs :IntegerLiteralType! = 0
+    var goalfats : IntegerLiteralType! = 0
+    var goalcals : IntegerLiteralType! = 1250
+    
+    
     override func viewDidLoad() {
+        self.clearsSelectionOnViewWillAppear = false
         super.viewDidLoad()
-      
+        print(chosenMeals)
+
+       
+//
+//        let  protein : String! = nutritionData[chosenMeals[0]]!["protein"] + nutritionData[chosenMeals[0]]!["protein"]
+//        let carbs : String! = nutritionData[recipe]!["carbs"]
+//        let fats : String! = nutritionData[recipe]!["fat"]
+//        let cals : String! = nutritionData[recipe]!["calories"]
+//
+//
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -33,11 +55,14 @@ class MealPlanTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if(section == 3) {
+            return 4
+        }
         return 1
     }
 
@@ -57,7 +82,23 @@ class MealPlanTableViewController: UITableViewController {
         if (indexPath.section == 2) {
             cell.textLabel?.text = chosenMeals[2] //"Herb-Crusted Salmon"
         }
-
+        
+        if (indexPath.section == 3) {
+            cell.selectionStyle = .none
+            if(indexPath.row == 0) {
+                cell.textLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!)"
+            }
+            if(indexPath.row == 1) {
+                cell.textLabel?.text = "Fats: \t \(fats!) out of \(goalfats!)"
+            }
+            if(indexPath.row == 2) {
+                cell.textLabel?.text = "Carbs: \t \(carbs!) out of \(goalcarbs!)"
+            }
+            if(indexPath.row == 3) {
+                cell.textLabel?.text = "Calories: \t \(cals!) out of \(goalcals!)"
+            }
+        }
+        
         return cell
     }
  
@@ -75,6 +116,9 @@ class MealPlanTableViewController: UITableViewController {
         if (section == 2) {
             mealType = "Dinner"
         }
+        if(section == 3) {
+            mealType = "Nutrition Information"
+        }
         
         return mealType
     }
@@ -84,20 +128,21 @@ class MealPlanTableViewController: UITableViewController {
             if let indexPath =  tableView.indexPathForSelectedRow {
                 var text : String = ""
                 if (indexPath.section == 0) {
-                    text = "Scrambled Egg Sandwich"
+                    text = "Scrambled Egg Sandwich" //chosenMeals[0]
                 }
                 
                 if (indexPath.section == 1) {
-                    text = "Tuna Fish Melt Quesadilla"
+                    text = "Tuna Fish Melt Quesadilla"//chosenMeals[1]
                 }
                 
-                if (indexPath.section == 2) {
-                    text = "Herb-Crusted Salmon"
+                if (indexPath.section == 2 || indexPath.section == 3) {
+                    text = "Herb-Crusted Salmon" // chosenMeals[2]
                 }
                 let controller = segue.destination as! RecipeViewController
                 let chosemeal = text
                 controller.mealChosen = chosemeal
             }
+            
            
         }
         

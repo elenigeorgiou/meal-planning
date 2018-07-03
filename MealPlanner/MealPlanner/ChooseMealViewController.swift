@@ -33,6 +33,8 @@ class ChooseMealsController: UITableViewController {
         "Grilled Chicken"
     ]
     override func viewDidLoad() {
+        
+        self.clearsSelectionOnViewWillAppear = false
         super.viewDidLoad()
         //self.clearsSelectionOnViewWillAppear = false
         
@@ -124,6 +126,8 @@ class ChooseMealsController: UITableViewController {
     var breakfastMeal:String = ""
     var lunchMeal:String = ""
     var dinnerMeal:String = ""
+    var mealsChosen = ["","",""]
+   
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableView.allowsMultipleSelection = true
         if indexPath.section == 0 {
@@ -142,15 +146,22 @@ class ChooseMealsController: UITableViewController {
                 }
             }
         }
+        
         return indexPath
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CreateMealPlanSegue" {
+         mealsChosen = [breakfastMeal, lunchMeal, dinnerMeal]
+     //   if segue.identifier == "CreateMealPlanSegue" {
                 let controller = segue.destination as! MealPlanNavigationController
-                let mealsChosen = [breakfastMeal, lunchMeal, dinnerMeal]
+           //     let controller2 = segue.destination as! MealPlanTableViewController
+                print(mealsChosen)
                 controller.chosenMeals = mealsChosen
-            }
+                let mealView = controller.viewControllers.first as! MealPlanTableViewController
+                mealView.chosenMeals = mealsChosen
+        // self.navigationController?.pushViewController(controller, animated: true)
+              //  controller2.chosenMeals = mealsChosen
+          //  }
         
     }
     

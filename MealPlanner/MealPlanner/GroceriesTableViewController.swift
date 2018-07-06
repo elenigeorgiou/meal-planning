@@ -10,11 +10,20 @@ import UIKit
 
 class GroceriesTableViewController: UITableViewController {
 
+    var haveList : [String] = ["Peanut Butter - 1 jar"]
+    var produceList : [String] = ["Strawberries - 500 grams - $2.99","Onion - 2 - $0.54", "Spinach - 500 grams - $2.27"]
+    var meatList : [String] = ["Tuna - 5 ounces - $2.99","Rotisserie Chicken - 1 - $5.27"]
+    var pantryList : [String] = ["Mayonnaise - 1 jar - $4.99", "Mustard - 1 jar - $4.99", "Salt - 93 grams - $3.23", "Pepper - 93 grams - $4.23", "Whole Wheat Bread - 20 slices - $2.99"]
+    var dairyList : [String] = ["Egg - 6 - $3.99"]
+    
+    var chosenMeals = ["","",""]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //set up grocery list 
+        
         // Uncomment the following line to preserve selection between presentations
-      //   self.clearsSelectionOnViewWillAppear = false
+        // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -35,86 +44,61 @@ class GroceriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        
-        if (section == 2) {
-            return 4
-        }
-        if (section == 3) {
-            return 2
+        if (section == 0) {
+            return dairyList.count
         }
         if (section == 1) {
-            return 5
+            return produceList.count
         }
-        return 1
+        if (section == 2) {
+            return meatList.count
+        }
+        if (section == 3) {
+            return pantryList.count
+        }
+        if (section == 4) {
+            return haveList.count
+        }
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        let dairyColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.9)
+        let produceColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.6)
+        let pantryColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.6)
+        let meatColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.6)
+        let haveColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.6)
         // Configure the cell...
         if (indexPath.section == 0) {
-            cell.textLabel?.text = "Egg - 6 - $3.99"
+            cell.textLabel?.text = dairyList[indexPath.row]
+            cell.contentView.backgroundColor = dairyColor
+    
         }
         
         if (indexPath.section == 1) {
-            if (indexPath.row == 0) {
-                cell.textLabel?.text = "Mayonnaise - 1 jar - $4.99"
-            }
-            
-            if (indexPath.row == 1) {
-                cell.textLabel?.text = "Mustard - 1 jar - $4.99"
-            }
-            
-            if (indexPath.row == 2) {
-                cell.textLabel?.text = "Salt - 93 grams - $3.23"
-            }
-            
-            if (indexPath.row == 3) {
-                cell.textLabel?.text = "Pepper - 93 grams - $4.23"
-            }
-            
-            if (indexPath.row == 4) {
-                
-            
-                cell.textLabel?.text = "Whole Wheat Bread - 20 slices - $2.99"
-            }
+            //cell.backgroundColor = UIColor.green
+           cell.textLabel?.text = produceList[indexPath.row]
+           cell.contentView.backgroundColor = produceColor
         }
         
         if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                cell.textLabel?.text = "Strawberries - 500 grams - $2.99"
-            }
-            
-            if (indexPath.row == 1) {
-                cell.textLabel?.text = "Tomato - 1 - $0.53"
-            }
-            
-            if (indexPath.row == 2) {
-                cell.textLabel?.text = "Onion - 2 - $0.54"
-            }
-            
-            if (indexPath.row == 3) {
-                cell.textLabel?.text = "Spinach - 500 grams - $2.27"
-            }
+         //   cell.backgroundColor = [UIColor .purple]
+            cell.textLabel?.text = meatList[indexPath.row]
+             cell.contentView.backgroundColor = meatColor
         }
         
         if (indexPath.section == 3) {
-            if (indexPath.row == 0) {
-                cell.textLabel?.text = "Tuna - 5 ounces - $2.99"
-            }
-            
-            if (indexPath.row == 1) {
-                cell.textLabel?.text = "Rotisserie Chicken - 1 - $5.27"
-            }
+          //  cell.backgroundColor = [UIColor .red]
+            cell.textLabel?.text = pantryList[indexPath.row]
+             cell.contentView.backgroundColor = pantryColor
         }
         
         if (indexPath.section == 4) {
-           
-        }
-        if (indexPath.section == 4) {
-            if (indexPath.row == 0) {
-                cell.textLabel?.text = "Peanut Butter - 1 jar"
-            }
+        //    cell.backgroundColor = [UIColor .yellow]
+              cell.textLabel?.text = haveList[indexPath.row]
+             cell.contentView.backgroundColor = haveColor
         }
         
         return cell
@@ -128,15 +112,15 @@ class GroceriesTableViewController: UITableViewController {
         }
         
         if (section == 1) {
-            mealType = "Pantry"
-        }
-        
-        if (section == 2) {
             mealType = "Produce"
         }
         
-        if (section == 3) {
+        if (section == 2) {
             mealType = "Meat"
+        }
+        
+        if (section == 3) {
+            mealType = "Pantry"
         }
         
         if (section == 4) {
@@ -146,10 +130,11 @@ class GroceriesTableViewController: UITableViewController {
         return mealType
     }
     
+
+    
     //be able to check the boxes
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
@@ -157,6 +142,7 @@ class GroceriesTableViewController: UITableViewController {
                 cell.accessoryType = .checkmark
             }
         }
+        
         
 
     }

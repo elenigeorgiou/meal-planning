@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class ChooseMealsController: UITableViewController {
+    
+   
+    
     let breakfast = [
         "Scrambled Egg Sandwich",
         "Canadian Bacon Pocket with Egg, Tomato and Lettuce",
@@ -32,6 +35,9 @@ class ChooseMealsController: UITableViewController {
         "Chicken Parm Sub",
         "Grilled Chicken"
     ]
+    @IBOutlet var choosemeals: [UITableViewCell]!
+    
+    
     override func viewDidLoad() {
         
         self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +46,7 @@ class ChooseMealsController: UITableViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,15 +98,15 @@ class ChooseMealsController: UITableViewController {
         var mealType = ""
         
         if (section == 0) {
-            mealType = "Breakfast Day 1"
+            mealType = "Day 1 : Breakfast"
         }
         
         if (section == 1) {
-            mealType = "Lunch Day 1"
+            mealType = "Day 1 : Lunch"
         }
         
         if (section == 2) {
-            mealType = "Dinner Day 1"
+            mealType = "Day 1 : Dinner"
         }
         
         return mealType
@@ -130,6 +136,7 @@ class ChooseMealsController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableView.allowsMultipleSelection = true
+       
         if indexPath.section == 0 {
             breakfastMeal = self.breakfast[indexPath.row]
         }

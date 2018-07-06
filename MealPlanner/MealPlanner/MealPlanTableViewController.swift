@@ -11,32 +11,35 @@ import UIKit
 class MealPlanTableViewController: UITableViewController {
     
     
-    var chosenMeals : [String] = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
-
+    var chosenMeals : [String] = ["", "",""]
+    var defaultMeals = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
+    let nutritionData = ["Scrambled Egg Sandwich" : ["protein": 10, "carbs": 34, "fat": 5, "calories":250], "Tuna Fish Melt Quesadilla" : ["protein": 44, "carbs": 29, "fat": 12, "calories": 405], "Herb-Crusted Salmon" : ["protein": 29, "carbs":14, "fat": 9, "calories": 253]]
     
-    var  protein : IntegerLiteralType! = 0
+    var protein : IntegerLiteralType! = 0
     var carbs :IntegerLiteralType! = 0
     var fats : IntegerLiteralType! = 0
     var cals : IntegerLiteralType! = 0
-    var goalprotein : IntegerLiteralType! = 0
-    var goalcarbs :IntegerLiteralType! = 0
-    var goalfats : IntegerLiteralType! = 0
+    var goalprotein : IntegerLiteralType! = 85
+    var goalcarbs :IntegerLiteralType! = 140
+    var goalfats : IntegerLiteralType! = 55
     var goalcals : IntegerLiteralType! = 1250
     
     
     override func viewDidLoad() {
+        if chosenMeals == ["","",""] {
+            chosenMeals = defaultMeals
+        }
+        protein = nutritionData[chosenMeals[0]]!["protein"]! + nutritionData[chosenMeals[1]]!["protein"]! + nutritionData[chosenMeals[2]]!["protein"]!
+        carbs = nutritionData[chosenMeals[0]]!["carbs"]! + nutritionData[chosenMeals[1]]!["carbs"]! + nutritionData[chosenMeals[2]]!["carbs"]!
+        fats = nutritionData[chosenMeals[0]]!["fat"]! + nutritionData[chosenMeals[1]]!["fat"]! + nutritionData[chosenMeals[2]]!["fat"]!
+        cals  = nutritionData[chosenMeals[0]]!["calories"]! + nutritionData[chosenMeals[1]]!["calories"]! + nutritionData[chosenMeals[2]]!["calories"]!
+//
+//        
         self.clearsSelectionOnViewWillAppear = false
         super.viewDidLoad()
         print(chosenMeals)
-
        
-//
-//        let  protein : String! = nutritionData[chosenMeals[0]]!["protein"] + nutritionData[chosenMeals[0]]!["protein"]
-//        let carbs : String! = nutritionData[recipe]!["carbs"]
-//        let fats : String! = nutritionData[recipe]!["fat"]
-//        let cals : String! = nutritionData[recipe]!["calories"]
-//
-//
+
 
         // Uncomment the following line to preserve selection between presentations
         

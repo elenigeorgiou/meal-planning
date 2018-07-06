@@ -16,6 +16,8 @@ class GroceriesTableViewController: UITableViewController {
     var pantryList : [String] = ["Mayonnaise - 1 jar - $4.99", "Mustard - 1 jar - $4.99", "Salt - 93 grams - $3.23", "Pepper - 93 grams - $4.23", "Whole Wheat Bread - 20 slices - $2.99"]
     var dairyList : [String] = ["Egg - 6 - $3.99"]
     
+    var checkedOff : [String : Bool] = [:]
+    
     var chosenMeals = ["","",""]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,8 @@ class GroceriesTableViewController: UITableViewController {
         let haveColor = UIColor(red: 101, green: 170, blue: 247, alpha: 0.6)
         // Configure the cell...
         if (indexPath.section == 0) {
-            cell.textLabel?.text = dairyList[indexPath.row]
+            let text = dairyList[indexPath.row]
+            cell.textLabel?.text = text
             cell.contentView.backgroundColor = dairyColor
     
         }
@@ -138,10 +141,14 @@ class GroceriesTableViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
+                checkedOff[(cell.textLabel?.text)!] = false
             } else {
                 cell.accessoryType = .checkmark
+                checkedOff[(cell.textLabel?.text)!] = true
             }
+           
         }
+        
         
         
 

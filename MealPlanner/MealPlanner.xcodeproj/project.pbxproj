@@ -10,7 +10,6 @@
 		1407123420E6683000A9F276 /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407123320E6683000A9F276 /* NutritionViewController.swift */; };
 		1407123820E674F200A9F276 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407123720E674F200A9F276 /* RecipeViewController.swift */; };
 		1435C69A20CAFB1600F72851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C69920CAFB1600F72851 /* AppDelegate.swift */; };
-		1435C69C20CAFB1600F72851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C69B20CAFB1600F72851 /* ViewController.swift */; };
 		1435C69F20CAFB1600F72851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1435C69D20CAFB1600F72851 /* Main.storyboard */; };
 		1435C6A120CAFB1800F72851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1435C6A020CAFB1800F72851 /* Assets.xcassets */; };
 		1435C6A420CAFB1800F72851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1435C6A220CAFB1800F72851 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,8 @@
 		14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */; };
 		9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */; };
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
+		9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659C31920EC037000799A45 /* MealPlanDao.swift */; };
+		9675819720EEFDDB0052C7C4 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675819620EEFDDB0052C7C4 /* Meal.swift */; };
 		96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,6 @@
 		1407123720E674F200A9F276 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		1435C69620CAFB1600F72851 /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1435C69920CAFB1600F72851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1435C69B20CAFB1600F72851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1435C69E20CAFB1600F72851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1435C6A020CAFB1800F72851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1435C6A320CAFB1800F72851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanNavigationController.swift; sourceTree = "<group>"; };
 		9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
+		9659C31920EC037000799A45 /* MealPlanDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDao.swift; sourceTree = "<group>"; };
+		9675819620EEFDDB0052C7C4 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -115,7 +117,6 @@
 			children = (
 				1435C69920CAFB1600F72851 /* AppDelegate.swift */,
 				1407123320E6683000A9F276 /* NutritionViewController.swift */,
-				1435C69B20CAFB1600F72851 /* ViewController.swift */,
 				1435C69D20CAFB1600F72851 /* Main.storyboard */,
 				1407123720E674F200A9F276 /* RecipeViewController.swift */,
 				1435C6A020CAFB1800F72851 /* Assets.xcassets */,
@@ -125,6 +126,8 @@
 				9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */,
 				148569F420E405790077CC90 /* ChooseMealViewController.swift */,
 				14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */,
+				9659C31920EC037000799A45 /* MealPlanDao.swift */,
+				9675819620EEFDDB0052C7C4 /* Meal.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -287,10 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1435C69C20CAFB1600F72851 /* ViewController.swift in Sources */,
 				1435C69A20CAFB1600F72851 /* AppDelegate.swift in Sources */,
 				148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */,
+				9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */,
 				1407123820E674F200A9F276 /* RecipeViewController.swift in Sources */,
+				9675819720EEFDDB0052C7C4 /* Meal.swift in Sources */,
 				1407123420E6683000A9F276 /* NutritionViewController.swift in Sources */,
 				9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */,
 				9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */,

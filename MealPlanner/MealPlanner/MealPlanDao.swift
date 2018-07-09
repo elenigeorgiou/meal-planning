@@ -9,12 +9,12 @@
 import Foundation
 
 class MealPlanDao {
-    static var meals: Array<Meal> = [Meal]()
-    static var breakfastMeals: Array<Meal> = [Meal]()
-    static var lunchMeals: Array<Meal> = [Meal]()
-    static var dinnerMeals: Array<Meal> = [Meal]()
+    static var meals: [String: Meal] = [:]
+    static var breakfastMeals: [String: Meal] = [:]
+    static var lunchMeals: [String: Meal] = [:]
+    static var dinnerMeals: [String: Meal] = [:]
     
-    static func getBreakfastOptions() -> Array<Meal> {
+    static func getBreakfastOptions() -> [(key: String, value: Meal)] {
         if (breakfastMeals.isEmpty) {
             let scrambledEgg: Meal = Meal()
             scrambledEgg.name = "Scrambled Egg Sandwich"
@@ -25,31 +25,31 @@ class MealPlanDao {
             scrambledEgg.calories = 250
             scrambledEgg.mealType = Meal.MealType.Breakfast
             scrambledEgg.image = "eggs.jpg"
-            meals.append(scrambledEgg)
-            breakfastMeals.append(scrambledEgg)
+            meals.updateValue(scrambledEgg, forKey: scrambledEgg.name!)
+            breakfastMeals.updateValue(scrambledEgg, forKey: scrambledEgg.name!)
             
             let canadianBacon: Meal = Meal()
             canadianBacon.name = "Canadian Bacon Pocket with Egg, Tomato and Lettuce"
             canadianBacon.mealType = Meal.MealType.Breakfast
-            meals.append(canadianBacon)
-            breakfastMeals.append(canadianBacon)
+            meals.updateValue(canadianBacon, forKey: canadianBacon.name!)
+            breakfastMeals.updateValue(canadianBacon, forKey: canadianBacon.name!)
             
             let englishMuffin: Meal = Meal()
             englishMuffin.name = "English Muffin with Peanut Butter"
             englishMuffin.mealType = Meal.MealType.Breakfast
-            meals.append(englishMuffin)
-            breakfastMeals.append(englishMuffin)
+            meals.updateValue(englishMuffin, forKey: englishMuffin.name!)
+            breakfastMeals.updateValue(englishMuffin, forKey: englishMuffin.name!)
             
             let yogurtOats: Meal = Meal()
             yogurtOats.name = "Yogurt, Oats, and Raspberries"
             yogurtOats.mealType = Meal.MealType.Breakfast
-            meals.append(yogurtOats)
-            breakfastMeals.append(yogurtOats)
+            meals.updateValue(yogurtOats, forKey: yogurtOats.name!)
+            breakfastMeals.updateValue(yogurtOats, forKey: yogurtOats.name!)
         }
-        return breakfastMeals
+        return breakfastMeals.sorted {$0.key < $1.key}
     }
     
-    static func getLunchOptions() -> Array<Meal> {
+    static func getLunchOptions() -> [(key: String, value: Meal)] {
         if (lunchMeals.isEmpty) {
             let tunaFish: Meal = Meal()
             tunaFish.name = "Tuna Fish Melt Quesadilla"
@@ -60,37 +60,37 @@ class MealPlanDao {
             tunaFish.calories = 405
             tunaFish.mealType = Meal.MealType.Lunch
             tunaFish.image = "tuna.jpg"
-            meals.append(tunaFish)
-            lunchMeals.append(tunaFish)
+            meals.updateValue(tunaFish, forKey: tunaFish.name!)
+            lunchMeals.updateValue(tunaFish, forKey: tunaFish.name!)
             
             let chickenWaldorf: Meal = Meal()
             chickenWaldorf.name = "Chicken Waldorf Salad"
             chickenWaldorf.mealType = Meal.MealType.Lunch
-            meals.append(chickenWaldorf)
-            lunchMeals.append(chickenWaldorf)
+            meals.updateValue(chickenWaldorf, forKey: chickenWaldorf.name!)
+            lunchMeals.updateValue(chickenWaldorf, forKey: chickenWaldorf.name!)
             
             let whiteBean: Meal = Meal()
             whiteBean.name = "White Bean and Spinach Soup"
             whiteBean.mealType = Meal.MealType.Lunch
-            meals.append(whiteBean)
-            lunchMeals.append(whiteBean)
+            meals.updateValue(whiteBean, forKey: whiteBean.name!)
+            lunchMeals.updateValue(whiteBean, forKey: whiteBean.name!)
             
             let chickPea: Meal = Meal()
             chickPea.name = "Chickpea Salad"
             chickPea.mealType = Meal.MealType.Lunch
-            meals.append(chickPea)
-            lunchMeals.append(chickPea)
+            meals.updateValue(chickPea, forKey: chickPea.name!)
+            lunchMeals.updateValue(chickPea, forKey: chickPea.name!)
             
             let minestrone: Meal = Meal()
             minestrone.name = "Minestrone Soup"
             minestrone.mealType = Meal.MealType.Lunch
-            meals.append(minestrone)
-            lunchMeals.append(minestrone)
+            meals.updateValue(minestrone, forKey: minestrone.name!)
+            lunchMeals.updateValue(minestrone, forKey: minestrone.name!)
         }
-        return lunchMeals
+        return lunchMeals.sorted {$0.key < $1.key}
     }
     
-    static func getDinnerOptions() -> Array<Meal> {
+    static func getDinnerOptions() ->  [(key: String, value: Meal)] {
         if (dinnerMeals.isEmpty) {
             let herbCrusted: Meal = Meal()
             herbCrusted.name = "Herb-Crusted Salmon"
@@ -101,33 +101,61 @@ class MealPlanDao {
             herbCrusted.calories = 253
             herbCrusted.mealType = Meal.MealType.Dinner
             herbCrusted.image = "salmon.jpg"
-            meals.append(herbCrusted)
-            dinnerMeals.append(herbCrusted)
+            meals.updateValue(herbCrusted, forKey: herbCrusted.name!)
+            dinnerMeals.updateValue(herbCrusted, forKey: herbCrusted.name!)
             
             let broiledShrimp: Meal = Meal()
             broiledShrimp.name = "Broiled Shrimp with Lemon, Garlic and Spinach"
             broiledShrimp.mealType = Meal.MealType.Dinner
-            meals.append(broiledShrimp)
-            dinnerMeals.append(broiledShrimp)
+            meals.updateValue(broiledShrimp, forKey: broiledShrimp.name!)
+            dinnerMeals.updateValue(broiledShrimp, forKey: broiledShrimp.name!)
             
             let chickenSalad: Meal = Meal()
             chickenSalad.name = "Dinner Rotisserie Chicken Salad"
             chickenSalad.mealType = Meal.MealType.Dinner
-            meals.append(chickenSalad)
-            dinnerMeals.append(chickenSalad)
+            meals.updateValue(chickenSalad, forKey: chickenSalad.name!)
+            dinnerMeals.updateValue(chickenSalad, forKey: chickenSalad.name!)
             
             let chickenParm: Meal = Meal()
             chickenParm.name = "Chicken Parm Sub"
             chickenParm.mealType = Meal.MealType.Dinner
-            meals.append(chickenParm)
-            dinnerMeals.append(chickenParm)
+            meals.updateValue(chickenParm, forKey: chickenParm.name!)
+            dinnerMeals.updateValue(chickenParm, forKey: chickenParm.name!)
             
             let grilledChicken: Meal = Meal()
             grilledChicken.name = "Grilled Chicken"
             grilledChicken.mealType = Meal.MealType.Dinner
-            meals.append(grilledChicken)
-            dinnerMeals.append(grilledChicken)
+            meals.updateValue(grilledChicken, forKey: grilledChicken.name!)
+            dinnerMeals.updateValue(grilledChicken, forKey: grilledChicken.name!)
         }
-        return dinnerMeals
+        return dinnerMeals.sorted {$0.key < $1.key}
+    }
+    
+    static func getMealByName(forKey mealName: String) -> Meal {
+        return meals[mealName]!
+    }
+    
+    static func getBreakfastMealByName(forKey mealName: String) -> Meal {
+        return breakfastMeals[mealName]!
+    }
+    
+    static func getLunchMealByName(forKey mealName: String) -> Meal {
+        return lunchMeals[mealName]!
+    }
+    
+    static func getDinnerMealByName(forKey mealName: String) -> Meal {
+        return dinnerMeals[mealName]!
+    }
+    
+    static func getDefaultBreakfast() -> Meal {
+        return breakfastMeals["Scrambled Egg Sandwich"]!
+    }
+    
+    static func getDefaultLunch() -> Meal {
+        return lunchMeals["Tuna Fish Melt Quesadilla"]!
+    }
+    
+    static func getDefaultDinner() -> Meal {
+        return dinnerMeals["Herb-Crusted Salmon"]!
     }
 }

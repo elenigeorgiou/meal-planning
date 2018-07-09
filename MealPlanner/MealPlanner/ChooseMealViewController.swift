@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 
 class ChooseMealsController: UITableViewController {
+    @IBOutlet var choosemeals: [UITableViewCell]!
     let breakfast = MealPlanDao.getBreakfastOptions()
     let lunch = MealPlanDao.getLunchOptions()
     let dinner = MealPlanDao.getDinnerOptions()
-
-    @IBOutlet var choosemeals: [UITableViewCell]!
+    let meals = MealPlanDao.meals
+    var breakfastMeal: Meal = Meal()
+    var lunchMeal: Meal = Meal()
+    var dinnerMeal: Meal = Meal()
+    var mealsChosen: [Meal] = [Meal]()
     
     override func viewDidLoad() {
         
@@ -58,15 +62,15 @@ class ChooseMealsController: UITableViewController {
         
         // Configure the cell...
         if (indexPath.section == 0) {
-            cell.textLabel?.text = self.breakfast[indexPath.row].name
+            cell.textLabel?.text = self.breakfast[indexPath.row].key
         }
         
         if (indexPath.section == 1) {
-            cell.textLabel?.text = self.lunch[indexPath.row].name
+            cell.textLabel?.text = self.lunch[indexPath.row].key
         }
         
         if (indexPath.section == 2) {
-            cell.textLabel?.text = self.dinner[indexPath.row].name
+            cell.textLabel?.text = self.dinner[indexPath.row].key
         }
         
         return cell
@@ -107,22 +111,18 @@ class ChooseMealsController: UITableViewController {
 //
 //
 //    }
-    var breakfastMeal:String = ""
-    var lunchMeal:String = ""
-    var dinnerMeal:String = ""
-    var mealsChosen = ["","",""]
    
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableView.allowsMultipleSelection = true
        
         if indexPath.section == 0 {
-            breakfastMeal = self.breakfast[indexPath.row].name!
+            breakfastMeal = self.breakfast[indexPath.row].value
         }
         if indexPath.section == 1 {
-            lunchMeal = self.lunch[indexPath.row].name!
+            lunchMeal = self.lunch[indexPath.row].value
         }
         if indexPath.section == 2 {
-            dinnerMeal = self.dinner[indexPath.row].name!
+            dinnerMeal = self.dinner[indexPath.row].value
         }
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
             for selectedIndexPath in selectedIndexPaths {

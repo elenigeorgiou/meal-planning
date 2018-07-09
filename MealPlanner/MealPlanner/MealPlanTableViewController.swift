@@ -10,10 +10,7 @@ import UIKit
 
 class MealPlanTableViewController: UITableViewController {
     
-    
-    var chosenMeals : [String] = ["", "",""]
-    var defaultMeals = ["Scrambled Egg Sandwich","Tuna Fish Melt Quesadilla","Herb-Crusted Salmon"]
-    let nutritionData = ["Scrambled Egg Sandwich" : ["protein": 10, "carbs": 34, "fat": 5, "calories":250], "Tuna Fish Melt Quesadilla" : ["protein": 44, "carbs": 29, "fat": 12, "calories": 405], "Herb-Crusted Salmon" : ["protein": 29, "carbs":14, "fat": 9, "calories": 253]]
+    var chosenMeals : [Meal] = [Meal]()
     
     var protein : IntegerLiteralType! = 0
     var carbs :IntegerLiteralType! = 0
@@ -26,13 +23,24 @@ class MealPlanTableViewController: UITableViewController {
     
     
     override func viewDidLoad() {
-        if chosenMeals == ["","",""] {
-            chosenMeals = defaultMeals
+        if chosenMeals.isEmpty {
+            chosenMeals = [MealPlanDao.getDefaultBreakfast(), MealPlanDao.getDefaultLunch(), MealPlanDao.getDefaultDinner()]
         }
-        protein = nutritionData[chosenMeals[0]]!["protein"]! + nutritionData[chosenMeals[1]]!["protein"]! + nutritionData[chosenMeals[2]]!["protein"]!
-        carbs = nutritionData[chosenMeals[0]]!["carbs"]! + nutritionData[chosenMeals[1]]!["carbs"]! + nutritionData[chosenMeals[2]]!["carbs"]!
-        fats = nutritionData[chosenMeals[0]]!["fat"]! + nutritionData[chosenMeals[1]]!["fat"]! + nutritionData[chosenMeals[2]]!["fat"]!
-        cals  = nutritionData[chosenMeals[0]]!["calories"]! + nutritionData[chosenMeals[1]]!["calories"]! + nutritionData[chosenMeals[2]]!["calories"]!
+        if chosenMeals[0].protein != nil {
+            
+        }
+        protein = (chosenMeals[0].protein != nil ? chosenMeals[0].protein! : 0)
+            + (chosenMeals[1].protein != nil ? chosenMeals[1].protein! : 0)
+            + (chosenMeals[2].protein != nil ? chosenMeals[2].protein! : 0)
+        carbs = (chosenMeals[0].carbs != nil ? chosenMeals[0].carbs! : 0)
+            + (chosenMeals[1].carbs != nil ? chosenMeals[1].carbs! : 0)
+            + (chosenMeals[2].carbs != nil ? chosenMeals[2].carbs! : 0)
+        fats = (chosenMeals[0].fat != nil ? chosenMeals[0].fat! : 0)
+            + (chosenMeals[1].fat != nil ? chosenMeals[1].fat! : 0)
+            + (chosenMeals[2].fat != nil ? chosenMeals[2].fat! : 0)
+        cals = (chosenMeals[0].calories != nil ? chosenMeals[0].calories! : 0)
+            + (chosenMeals[1].calories != nil ? chosenMeals[1].calories! : 0)
+            + (chosenMeals[2].calories != nil ? chosenMeals[2].calories! : 0)
 //
 //        
         self.clearsSelectionOnViewWillAppear = false
@@ -75,15 +83,15 @@ class MealPlanTableViewController: UITableViewController {
 
         // Configure the cell...
         if (indexPath.section == 0) {
-            cell.textLabel?.text = chosenMeals[0] //"Scrambled Egg Sandwich"
+            cell.textLabel?.text = chosenMeals[0].name //"Scrambled Egg Sandwich"
         }
         
         if (indexPath.section == 1) {
-            cell.textLabel?.text = chosenMeals[1] // "Tuna Fish Melt Quesadilla"
+            cell.textLabel?.text = chosenMeals[1].name // "Tuna Fish Melt Quesadilla"
         }
         
         if (indexPath.section == 2) {
-            cell.textLabel?.text = chosenMeals[2] //"Herb-Crusted Salmon"
+            cell.textLabel?.text = chosenMeals[2].name //"Herb-Crusted Salmon"
         }
         
         if (indexPath.section == 3) {

@@ -82,8 +82,8 @@ class GroceriesTableViewController: UITableViewController {
         
         if (indexPath.section == 1) {
             //cell.backgroundColor = UIColor.green
-           cell.textLabel?.text = produceList[indexPath.row]
-           cell.contentView.backgroundColor = produceColor
+            cell.textLabel?.text = produceList[indexPath.row]
+            cell.contentView.backgroundColor = produceColor
         }
         
         if (indexPath.section == 2) {

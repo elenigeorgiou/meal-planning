@@ -21,6 +21,9 @@
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
 		9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659C31920EC037000799A45 /* MealPlanDao.swift */; };
 		9675819720EEFDDB0052C7C4 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675819620EEFDDB0052C7C4 /* Meal.swift */; };
+		9686955120F2FD8A000D9116 /* IngredientQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686955020F2FD8A000D9116 /* IngredientQuantity.swift */; };
+		9686955320F2FDEC000D9116 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686955220F2FDEC000D9116 /* Ingredient.swift */; };
+		9686955520F2FE1B000D9116 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686955420F2FE1B000D9116 /* FoodItem.swift */; };
 		96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
 		9659C31920EC037000799A45 /* MealPlanDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDao.swift; sourceTree = "<group>"; };
 		9675819620EEFDDB0052C7C4 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		9686955020F2FD8A000D9116 /* IngredientQuantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientQuantity.swift; sourceTree = "<group>"; };
+		9686955220F2FDEC000D9116 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9686955420F2FE1B000D9116 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		96DEEEC720D8BA3A00945186 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -128,6 +134,9 @@
 				14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */,
 				9659C31920EC037000799A45 /* MealPlanDao.swift */,
 				9675819620EEFDDB0052C7C4 /* Meal.swift */,
+				9686955020F2FD8A000D9116 /* IngredientQuantity.swift */,
+				9686955220F2FDEC000D9116 /* Ingredient.swift */,
+				9686955420F2FE1B000D9116 /* FoodItem.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -293,12 +302,15 @@
 				1435C69A20CAFB1600F72851 /* AppDelegate.swift in Sources */,
 				148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */,
 				9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */,
+				9686955120F2FD8A000D9116 /* IngredientQuantity.swift in Sources */,
+				9686955520F2FE1B000D9116 /* FoodItem.swift in Sources */,
 				1407123820E674F200A9F276 /* RecipeViewController.swift in Sources */,
 				9675819720EEFDDB0052C7C4 /* Meal.swift in Sources */,
 				1407123420E6683000A9F276 /* NutritionViewController.swift in Sources */,
 				9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */,
 				9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */,
 				14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */,
+				9686955320F2FDEC000D9116 /* Ingredient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

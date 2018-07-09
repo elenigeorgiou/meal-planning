@@ -23,4 +23,5 @@ class Meal {
     var carbs: Int?
     var fat: Int?
     var image: String?
+    var ingredients: [IngredientQuantity]?
 }

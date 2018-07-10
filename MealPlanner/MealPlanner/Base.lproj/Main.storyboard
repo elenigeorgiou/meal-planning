@@ -62,7 +62,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Groceries" id="qsB-MS-IbB">
                             <connections>
-                                <segue destination="A2d-yv-1NB" kind="presentation" id="ZjZ-1g-nEf"/>
+                                <segue destination="Ldf-WU-c3L" kind="show" id="ftD-wK-qlI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,13 +101,7 @@
                             <outlet property="delegate" destination="Ldf-WU-c3L" id="FP7-WS-Svu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PjH-T7-IOQ">
-                        <barButtonItem key="leftBarButtonItem" title="Meal Plan" id="Lfm-nf-JGb">
-                            <connections>
-                                <segue destination="8nT-Zb-dnH" kind="show" id="q61-WH-ZJP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="PjH-T7-IOQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXr-gh-MpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,7 +161,7 @@
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.37115266919136047" green="0.53690356016159058" blue="0.99781078100204468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="gUq-Z4-4Kc" kind="presentation" identifier="CreateMealPlanSegue" id="Ysy-1r-IdR"/>
+                                <segue destination="gUq-Z4-4Kc" kind="presentation" id="Tbe-7l-soR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -180,6 +174,7 @@
         <!--Grocery Nav-->
         <scene sceneID="fan-is-BP5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZU-4i-ISn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Grocery Nav" automaticallyAdjustsScrollViewInsets="NO" id="A2d-yv-1NB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J6e-Ne-3EI">
@@ -191,7 +186,6 @@
                         <segue destination="Ldf-WU-c3L" kind="relationship" relationship="rootViewController" id="3rW-TX-v6Y"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FZU-4i-ISn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3020" y="532.98350824587715"/>
         </scene>
@@ -280,7 +274,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZjZ-1g-nEf"/>
-        <segue reference="q61-WH-ZJP"/>
+        <segue reference="ftD-wK-qlI"/>
     </inferredMetricsTieBreakers>
 </document>

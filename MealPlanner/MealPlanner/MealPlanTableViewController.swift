@@ -11,14 +11,15 @@ import UIKit
 class MealPlanTableViewController: UITableViewController {
     
     var chosenMeals : [Meal] = [Meal]()
+   
     
     var protein : IntegerLiteralType! = 0
     var carbs :IntegerLiteralType! = 0
     var fats : IntegerLiteralType! = 0
     var cals : IntegerLiteralType! = 0
-    var goalprotein : IntegerLiteralType! = 85
-    var goalcarbs :IntegerLiteralType! = 140
-    var goalfats : IntegerLiteralType! = 55
+    var goalprotein : IntegerLiteralType! = 66
+    var goalcarbs :IntegerLiteralType! = 163
+    var goalfats : IntegerLiteralType! = 39
     var goalcals : IntegerLiteralType! = 1250
     
     
@@ -97,16 +98,16 @@ class MealPlanTableViewController: UITableViewController {
         if (indexPath.section == 3) {
             cell.selectionStyle = .none
             if(indexPath.row == 0) {
-                cell.textLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!)"
+                cell.textLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!) grams"
             }
             if(indexPath.row == 1) {
-                cell.textLabel?.text = "Fats: \t \(fats!) out of \(goalfats!)"
+                cell.textLabel?.text = "Fats: \t \(fats!) out of \(goalfats!) grams"
             }
             if(indexPath.row == 2) {
-                cell.textLabel?.text = "Carbs: \t \(carbs!) out of \(goalcarbs!)"
+                cell.textLabel?.text = "Carbs: \t \(carbs!) out of \(goalcarbs!) grams"
             }
             if(indexPath.row == 3) {
-                cell.textLabel?.text = "Calories: \t \(cals!) out of \(goalcals!)"
+                cell.textLabel?.text = "Calories: \t \(cals!) out of \(goalcals!) calories"
             }
         }
         
@@ -139,15 +140,15 @@ class MealPlanTableViewController: UITableViewController {
             if let indexPath =  tableView.indexPathForSelectedRow {
                 var text : String = ""
                 if (indexPath.section == 0) {
-                    text = "Scrambled Egg Sandwich" //chosenMeals[0]
+                    text = chosenMeals[0].name!
                 }
                 
                 if (indexPath.section == 1) {
-                    text = "Tuna Fish Melt Quesadilla"//chosenMeals[1]
+                    text = chosenMeals[1].name!
                 }
                 
                 if (indexPath.section == 2 || indexPath.section == 3) {
-                    text = "Herb-Crusted Salmon" // chosenMeals[2]
+                    text = chosenMeals[2].name!
                 }
                 let controller = segue.destination as! RecipeViewController
                 let chosemeal = text

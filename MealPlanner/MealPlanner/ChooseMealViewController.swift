@@ -18,7 +18,8 @@ class ChooseMealsController: UITableViewController {
     var breakfastMeal: Meal = Meal()
     var lunchMeal: Meal = Meal()
     var dinnerMeal: Meal = Meal()
-    var mealsChosen: [Meal] = [Meal]()
+    var chosenMeals: [Meal] = [Meal]()
+   
     
     override func viewDidLoad() {
         
@@ -136,14 +137,14 @@ class ChooseMealsController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         mealsChosen = [breakfastMeal, lunchMeal, dinnerMeal]
+        chosenMeals  = [breakfastMeal, lunchMeal, dinnerMeal]
      //   if segue.identifier == "CreateMealPlanSegue" {
                 let controller = segue.destination as! MealPlanNavigationController
            //     let controller2 = segue.destination as! MealPlanTableViewController
-                print(mealsChosen)
-                controller.chosenMeals = mealsChosen
+                print(chosenMeals)
+                controller.chosenMeals = chosenMeals
                 let mealView = controller.viewControllers.first as! MealPlanTableViewController
-                mealView.chosenMeals = mealsChosen
+                mealView.chosenMeals = chosenMeals
         // self.navigationController?.pushViewController(controller, animated: true)
               //  controller2.chosenMeals = mealsChosen
           //  }

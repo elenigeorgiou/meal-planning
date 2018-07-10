@@ -62,7 +62,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Groceries" id="qsB-MS-IbB">
                             <connections>
-                                <segue destination="Ldf-WU-c3L" kind="show" id="ftD-wK-qlI"/>
+                                <segue destination="Ldf-WU-c3L" kind="show" identifier="GroceryListSegue" id="ftD-wK-qlI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

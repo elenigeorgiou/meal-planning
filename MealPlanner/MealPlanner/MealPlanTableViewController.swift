@@ -154,6 +154,11 @@ class MealPlanTableViewController: UITableViewController {
                 let chosemeal = text
                 controller.mealChosen = chosemeal
             }
+            if segue.identifier == "GroceryListSegue" {
+                
+                
+                
+            }
             
            
         }

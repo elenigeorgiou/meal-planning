@@ -25,6 +25,9 @@ class MealPlanDao {
             scrambledEgg.calories = 250
             scrambledEgg.mealType = Meal.MealType.Breakfast
             scrambledEgg.image = "eggs.jpg"
+            scrambledEgg.ingredients?.append(FoodItem(name: "Whole Wheat Bread", price: 2.99, quantity: "20 slices", foodType: FoodItem.FoodType.Pantry))
+            scrambledEgg.ingredients?.append(FoodItem(name: "Strawberries", price: 2.99, quantity: "500 grams", foodType: FoodItem.FoodType.Produce))
+            scrambledEgg.ingredients?.append(FoodItem(name: "Egg", price: 3.99, quantity: "6", foodType: FoodItem.FoodType.Dairy))
             meals.updateValue(scrambledEgg, forKey: scrambledEgg.name!)
             breakfastMeals.updateValue(scrambledEgg, forKey: scrambledEgg.name!)
             
@@ -60,6 +63,10 @@ class MealPlanDao {
             tunaFish.calories = 405
             tunaFish.mealType = Meal.MealType.Lunch
             tunaFish.image = "tuna.jpg"
+            tunaFish.ingredients?.append(FoodItem(name: "Tuna", price: 2.99, quantity: "5 ounces", foodType: FoodItem.FoodType.Meat))
+            tunaFish.ingredients?.append(FoodItem(name: "Mayonnaise", price: 4.99, quantity: "1 jar", foodType: FoodItem.FoodType.Pantry))
+            tunaFish.ingredients?.append(FoodItem(name: "Mustard", price: 4.99, quantity: "1 jar", foodType: FoodItem.FoodType.Pantry))
+            tunaFish.ingredients?.append(FoodItem(name: "Onion", price: 0.54, quantity: "2", foodType: FoodItem.FoodType.Produce))
             meals.updateValue(tunaFish, forKey: tunaFish.name!)
             lunchMeals.updateValue(tunaFish, forKey: tunaFish.name!)
             
@@ -101,6 +108,10 @@ class MealPlanDao {
             herbCrusted.calories = 253
             herbCrusted.mealType = Meal.MealType.Dinner
             herbCrusted.image = "salmon.jpg"
+            herbCrusted.ingredients?.append(FoodItem(name: "Salmon", price: 7.99, quantity: "5 ounces", foodType: FoodItem.FoodType.Meat))
+            herbCrusted.ingredients?.append(FoodItem(name: "Spinach", price: 2.27, quantity: "500 grams", foodType: FoodItem.FoodType.Produce))
+            herbCrusted.ingredients?.append(FoodItem(name: "Salt", price: 3.23, quantity: "93 grams", foodType: FoodItem.FoodType.Pantry))
+            herbCrusted.ingredients?.append(FoodItem(name: "Pepper", price: 4.23, quantity: "93 grams", foodType: FoodItem.FoodType.Pantry))
             meals.updateValue(herbCrusted, forKey: herbCrusted.name!)
             dinnerMeals.updateValue(herbCrusted, forKey: herbCrusted.name!)
             

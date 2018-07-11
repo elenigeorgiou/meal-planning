@@ -154,13 +154,11 @@ class MealPlanTableViewController: UITableViewController {
                 let chosemeal = text
                 controller.mealChosen = chosemeal
             }
-            if segue.identifier == "GroceryListSegue" {
-                
-                
-                
-            }
-            
-           
+        }
+        
+        if segue.identifier == "GroceryListSegue" {
+            let controller = segue.destination as! GroceriesTableViewController
+            controller.chosenMeals = chosenMeals
         }
         
     }

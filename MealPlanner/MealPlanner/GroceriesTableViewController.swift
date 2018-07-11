@@ -18,11 +18,14 @@ class GroceriesTableViewController: UITableViewController {
     
     var checkedOff : [String : Bool] = [:]
     
-    var chosenMeals = ["","",""]
+    var chosenMeals: [Meal] = [Meal]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set up grocery list 
+        //set up grocery list
+        if !chosenMeals.isEmpty {
+            print(chosenMeals)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -9,6 +9,13 @@
 import Foundation
 
 class FoodItem {
+    init(name: String, price: Float, quantity: String, foodType: FoodType) {
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.foodType = foodType
+    }
+    
     enum FoodType {
         case Produce
         case Dairy
@@ -18,7 +25,7 @@ class FoodItem {
     }
     
     var name: String?
-    var price: Int?
-    var quantity: Int?
+    var price: Float?
+    var quantity: String?
     var foodType: FoodType?
 }

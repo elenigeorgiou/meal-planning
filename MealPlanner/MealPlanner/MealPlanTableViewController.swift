@@ -138,21 +138,22 @@ class MealPlanTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RecipeSegue" {
             if let indexPath =  tableView.indexPathForSelectedRow {
-                var text : String = ""
+                var text : Meal = Meal()
                 if (indexPath.section == 0) {
-                    text = chosenMeals[0].name!
+//                    text = chosenMeals[0].name!
+                    text = chosenMeals[0]
                 }
                 
                 if (indexPath.section == 1) {
-                    text = chosenMeals[1].name!
+                    text = chosenMeals[1]
                 }
                 
                 if (indexPath.section == 2 || indexPath.section == 3) {
-                    text = chosenMeals[2].name!
+                    text = chosenMeals[2]
                 }
                 let controller = segue.destination as! RecipeViewController
-                let chosemeal = text
-                controller.mealChosen = chosemeal
+               // controller.mealChosen = chosemeal
+                controller.chosenMeals = text
             }
         }
         

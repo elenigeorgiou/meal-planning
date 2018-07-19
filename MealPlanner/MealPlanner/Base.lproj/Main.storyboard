@@ -6,29 +6,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Meal Plan Table View Controller-->
+        <!--Meal Plan-->
         <scene sceneID="Kgq-xR-ghH">
             <objects>
                 <tableViewController id="8nT-Zb-dnH" customClass="MealPlanTableViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="utG-GM-iR7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="430-o1-hOu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LabelCell" textLabel="kts-xk-Ycy" rowHeight="92" style="IBUITableViewCellStyleDefault" id="x5p-GT-p4r">
-                                <rect key="frame" x="0.0" y="142.5" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x5p-GT-p4r" id="edC-m2-gc0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
@@ -55,8 +46,8 @@
                             <outlet property="delegate" destination="8nT-Zb-dnH" id="9bt-Dj-nBr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yFJ-Xu-f8X">
-                        <barButtonItem key="leftBarButtonItem" title="Choose Meals" style="done" id="9Nh-A0-uAb">
+                    <navigationItem key="navigationItem" title="Meal Plan" id="yFJ-Xu-f8X">
+                        <barButtonItem key="leftBarButtonItem" title="Choose" style="done" id="9Nh-A0-uAb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="fJF-AI-Mvw" kind="presentation" id="mut-IO-IOL"/>
@@ -74,29 +65,23 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="266.71664167916043"/>
         </scene>
-        <!--Groceries Table View Controller-->
+        <!--Grocery List-->
         <scene sceneID="XLl-0i-OUn">
             <objects>
                 <tableViewController id="Ldf-WU-c3L" customClass="GroceriesTableViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UIN-Rc-4bP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQk-te-7BM">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="NLJ-Yf-zu9">
-                                <rect key="frame" x="0.0" y="83" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLJ-Yf-zu9" id="aW2-VL-Ehz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -104,7 +89,7 @@
                             <outlet property="delegate" destination="Ldf-WU-c3L" id="FP7-WS-Svu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PjH-T7-IOQ"/>
+                    <navigationItem key="navigationItem" title="Grocery List" largeTitleDisplayMode="always" id="PjH-T7-IOQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXr-gh-MpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,8 +100,8 @@
             <objects>
                 <navigationController title="MealPlanNav" automaticallyAdjustsScrollViewInsets="NO" id="gUq-Z4-4Kc" customClass="MealPlanNavigationController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Elo-Lh-SBX">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="Elo-Lh-SBX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.9503137469291687" green="0.42217695713043213" blue="0.2122911810874939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -142,20 +127,12 @@
             <objects>
                 <tableViewController title="ChooseMeals" id="1Ad-gk-DIC" customClass="ChooseMealsController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" id="ujz-XK-lYD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Meals for Day 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jpk-Kp-aXb">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" id="7J1-Jy-HLg">
-                                <rect key="frame" x="0.0" y="122" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MealCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7J1-Jy-HLg" id="M46-xC-blX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -169,7 +146,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="XAA-CX-aqR">
+                    <navigationItem key="navigationItem" title="Choose Meals" id="XAA-CX-aqR">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="f81-Wb-cnT" colorLabel="IBBuiltInLabel-Blue">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,10 +166,13 @@
             <objects>
                 <navigationController title="Grocery Nav" automaticallyAdjustsScrollViewInsets="NO" id="A2d-yv-1NB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="J6e-Ne-3EI">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="J6e-Ne-3EI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -211,57 +191,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nutrition" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAM-dQ-jgL">
-                                <rect key="frame" x="16" y="371" width="343" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="nutrition"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAH-Mu-S65">
-                                <rect key="frame" x="0.0" y="493" width="375" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Instructions">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Instructions" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eRx-CN-YQ8">
-                                <rect key="frame" x="16" y="543" width="343" height="124"/>
+                                <rect key="frame" x="16" y="408" width="343" height="237"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-IJ-wqE">
-                                <rect key="frame" x="2" y="0.0" width="373" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="recipe-name"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRz-IV-Wgc">
-                                <rect key="frame" x="30" y="103" width="317" height="239"/>
+                                <rect key="frame" x="-12" y="0.0" width="399" height="316"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="food-image"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-IJ-wqE">
+                                <rect key="frame" x="-2" y="0.0" width="376" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="recipe-name"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nutrition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He7-B1-KmN">
+                                <rect key="frame" x="-2" y="359" width="377" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DXj-Zy-Zq1">
+                                <rect key="frame" x="49" y="324" width="277" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Nutrition"/>
+                                    <segment title="Instructions"/>
+                                    <segment title="Ingredients"/>
+                                </segments>
+                                <color key="tintColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segementControlSwitch:" destination="m3F-Z3-Zes" eventType="valueChanged" id="Rlf-Ir-7f8"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jMO-TL-Lro"/>
                     </view>
-                    <navigationItem key="navigationItem" id="860-3q-OOm"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="860-3q-OOm"/>
                     <connections>
                         <outlet property="Image" destination="bRz-IV-Wgc" id="bqV-lb-LSv"/>
                         <outlet property="instructionLabel" destination="eRx-CN-YQ8" id="e1y-Q5-fEE"/>
-                        <outlet property="nutritionLabel" destination="YAM-dQ-jgL" id="7GA-eT-VFc"/>
                         <outlet property="recipeLabel" destination="4eS-IJ-wqE" id="efc-Ed-c5H"/>
+                        <outlet property="segmentControl" destination="DXj-Zy-Zq1" id="ePX-CI-xyP"/>
+                        <outlet property="segmentLabel" destination="He7-B1-KmN" id="q08-zW-kSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MX9-JW-If5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,11 +252,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fJF-AI-Mvw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="aKf-B7-ppy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="aKf-B7-ppy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.95031374690000003" green="0.42217695710000003" blue="0.2122911811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

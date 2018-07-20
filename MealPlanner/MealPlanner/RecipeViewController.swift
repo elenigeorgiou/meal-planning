@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class RecipeViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
-    var chosenMeals : Meal = Meal()
+    var chosenMeals : Meal!
     var mealChosen : String = "" //default
     var ingredients: String = ""
     var selection: Int = 0
@@ -31,20 +31,26 @@ class RecipeViewController : UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         let recipe : String! = chosenMeals.name
-        print(recipe)
         recipeLabel.text = recipe
+        recipeLabel?.lineBreakMode = .byWordWrapping
+        recipeLabel?.numberOfLines = 0
+        
         protein  = String(chosenMeals.protein!)
         carbs = String(chosenMeals.carbs!)
         fats  = String(chosenMeals.fat!)
         cals  = String(chosenMeals.calories!)
+        
         for ing in chosenMeals.ingredients!{
             ingredienttext = "\(ingredients) \(ing.quantity!)  \(ing.name!)\n"
         }
+        
         instructionText = self.chosenMeals.instructions
         instructionText.enumerateLines { line, _ in
             self.instructionArray.append(line)
         }
+        
         image.image = UIImage(named: chosenMeals.image!)
+        
         self.view.addSubview(image)
         self.view.addSubview(recipeLabel);
         self.view.addSubview(tableView)

@@ -27,9 +27,7 @@ class MealPlanTableViewController: UITableViewController {
         if chosenMeals.isEmpty {
             chosenMeals = [MealPlanDao.getDefaultBreakfast(), MealPlanDao.getDefaultLunch(), MealPlanDao.getDefaultDinner()]
         }
-        if chosenMeals[0].protein != nil {
-            
-        }
+       
         protein = (chosenMeals[0].protein != nil ? chosenMeals[0].protein! : 0)
             + (chosenMeals[1].protein != nil ? chosenMeals[1].protein! : 0)
             + (chosenMeals[2].protein != nil ? chosenMeals[2].protein! : 0)

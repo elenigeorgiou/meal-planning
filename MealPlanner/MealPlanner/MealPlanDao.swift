@@ -75,10 +75,7 @@ class MealPlanDao {
 
             meals.updateValue(englishMuffin, forKey: englishMuffin.name!)
             breakfastMeals.updateValue(englishMuffin, forKey: englishMuffin.name!)
-            
-            
-            
-            
+         
             
             let yogurtOats: Meal = Meal()
             yogurtOats.name = "Yogurt, Oats, and Raspberries"

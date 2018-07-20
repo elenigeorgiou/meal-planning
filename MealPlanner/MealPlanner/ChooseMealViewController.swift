@@ -140,16 +140,20 @@ class ChooseMealsController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         chosenMeals  = [breakfastMeal, lunchMeal, dinnerMeal]
-     //   if segue.identifier == "CreateMealPlanSegue" {
+        if segue.identifier == "toMealPlan" {
                 let controller = segue.destination as! MealPlanNavigationController
-           //     let controller2 = segue.destination as! MealPlanTableViewController
                 print(chosenMeals)
                 controller.chosenMeals = chosenMeals
                 let mealView = controller.viewControllers.first as! MealPlanTableViewController
                 mealView.chosenMeals = chosenMeals
-        // self.navigationController?.pushViewController(controller, animated: true)
-              //  controller2.chosenMeals = mealsChosen
-          //  }
+            }
+        if segue.identifier == "toCreateOwnMeal" {
+            let controller = segue.destination as! CreateMealController
+            print(chosenMeals)
+            controller.chosenMeals = chosenMeals
+           
+            
+        }
         
     }
     

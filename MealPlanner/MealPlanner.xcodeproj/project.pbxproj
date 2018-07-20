@@ -17,6 +17,7 @@
 		1435C6BA20CAFB1800F72851 /* MealPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */; };
 		148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148569F420E405790077CC90 /* ChooseMealViewController.swift */; };
 		14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */; };
+		14D1918B2102323B00102844 /* CreateMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1918A2102323B00102844 /* CreateMealController.swift */; };
 		9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */; };
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
 		9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659C31920EC037000799A45 /* MealPlanDao.swift */; };
@@ -61,6 +62,7 @@
 		1435C6BB20CAFB1800F72851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		148569F420E405790077CC90 /* ChooseMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMealViewController.swift; sourceTree = "<group>"; };
 		14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanNavigationController.swift; sourceTree = "<group>"; };
+		14D1918A2102323B00102844 /* CreateMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealController.swift; sourceTree = "<group>"; };
 		9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
 		9659C31920EC037000799A45 /* MealPlanDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDao.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				1435C69920CAFB1600F72851 /* AppDelegate.swift */,
 				1407123320E6683000A9F276 /* NutritionViewController.swift */,
+				14D1918A2102323B00102844 /* CreateMealController.swift */,
 				1435C69D20CAFB1600F72851 /* Main.storyboard */,
 				1407123720E674F200A9F276 /* RecipeViewController.swift */,
 				1435C6A020CAFB1800F72851 /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 				148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */,
 				9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */,
 				9686955120F2FD8A000D9116 /* IngredientQuantity.swift in Sources */,
+				14D1918B2102323B00102844 /* CreateMealController.swift in Sources */,
 				9686955520F2FE1B000D9116 /* FoodItem.swift in Sources */,
 				1407123820E674F200A9F276 /* RecipeViewController.swift in Sources */,
 				9675819720EEFDDB0052C7C4 /* Meal.swift in Sources */,

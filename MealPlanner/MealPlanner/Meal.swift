@@ -24,4 +24,7 @@ class Meal {
     var fat: Int?
     var image: String?
     var ingredients: [FoodItem]?
+    var servings: Int? = 1
+    var preptime: Int? = 5
+    var totaltime: Int? = 10
 }

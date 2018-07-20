@@ -81,7 +81,8 @@ class MealPlanTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-
+        cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.textLabel?.numberOfLines = 0
         // Configure the cell...
         if (indexPath.section == 0) {
             cell.textLabel?.text = chosenMeals[0].name //"Scrambled Egg Sandwich"
@@ -96,7 +97,8 @@ class MealPlanTableViewController: UITableViewController {
         }
         
         if (indexPath.section == 3) {
-            cell.selectionStyle = .none
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+           // cell.selectionStyle = .none
             if(indexPath.row == 0) {
                 cell.textLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!) grams"
             }

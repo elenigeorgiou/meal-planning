@@ -18,15 +18,17 @@ class MealPlanDao {
         if (breakfastMeals.isEmpty) {
             let scrambledEgg: Meal = Meal()
             scrambledEgg.name = "Scrambled Egg Sandwich"
-            scrambledEgg.instructions = "1.Scramble 1 egg in a pan coated with cooking spray \n2. Place egg between 2 slices 100% whole wheat bread \n3. Serve with 1/2 cup strawberries and black coffee"
+            scrambledEgg.instructions = "1. Scramble 1 egg in a pan coated with cooking spray \n2. Place egg between 2 slices 100% whole wheat bread \n3. Serve with 1/2 cup strawberries and black coffee"
             scrambledEgg.protein = 10
             scrambledEgg.carbs = 34
             scrambledEgg.fat = 5
             scrambledEgg.calories = 250
             scrambledEgg.mealType = Meal.MealType.Breakfast
             scrambledEgg.image = "eggs.jpg"
+            scrambledEgg.totaltime = 10
+            scrambledEgg.preptime = 3
             scrambledEgg.ingredients = [FoodItem]()
-            scrambledEgg.ingredients?.append(FoodItem(name: "Whole Wheat Bread", price: 2.99, quantity: "20 slices", foodType: FoodItem.FoodType.Pantry))
+            scrambledEgg.ingredients?.append(FoodItem(name: "Whole Wheat Bread", price: 2.99, quantity: "2 slices", foodType: FoodItem.FoodType.Pantry))
             scrambledEgg.ingredients?.append(FoodItem(name: "Strawberries", price: 2.99, quantity: "500 grams", foodType: FoodItem.FoodType.Produce))
             scrambledEgg.ingredients?.append(FoodItem(name: "Egg", price: 3.99, quantity: "6", foodType: FoodItem.FoodType.Dairy))
             meals.updateValue(scrambledEgg, forKey: scrambledEgg.name!)
@@ -35,18 +37,65 @@ class MealPlanDao {
             let canadianBacon: Meal = Meal()
             canadianBacon.name = "Canadian Bacon Pocket with Egg, Tomato and Lettuce"
             canadianBacon.mealType = Meal.MealType.Breakfast
+            canadianBacon.instructions = "1. Turn oven to broil. Place Canadian bacon on a sheet tray and cook for 2 minutes. \n2. Split open pita and spread mayonnaise inside. \n3. Cut bacon in half and lay on the bottom half of pita. Fill with egg, lettuce and tomato."
+            canadianBacon.protein = 16
+            canadianBacon.carbs = 22
+            canadianBacon.fat = 10
+            canadianBacon.calories = 236
+            canadianBacon.image = "canadian.png"
+            canadianBacon.preptime = 5
+            canadianBacon.totaltime = 10
+            canadianBacon.ingredients = [FoodItem]()
+            canadianBacon.ingredients?.append(FoodItem(name: "Canadian Bacon or Turkey Bacon", price: 2.99, quantity: "1 slices", foodType: FoodItem.FoodType.Meat))
+            canadianBacon.ingredients?.append(FoodItem(name: "Whole Wheat Pita", price: 1.00, quantity: "1/2 slices", foodType: FoodItem.FoodType.Pantry))
+            canadianBacon.ingredients?.append(FoodItem(name: "Mayonnaise", price: 2.99, quantity: "1 tablespoon", foodType: FoodItem.FoodType.Pantry))
+            canadianBacon.ingredients?.append(FoodItem(name: "Egg", price: 3.99, quantity: "1", foodType: FoodItem.FoodType.Dairy))
+            canadianBacon.ingredients?.append(FoodItem(name: "Romaine Lettuce", price: 1.99, quantity: "2 leaves", foodType: FoodItem.FoodType.Produce))
+            canadianBacon.ingredients?.append(FoodItem(name: "Tomato", price: 1.50, quantity: "2 slices", foodType: FoodItem.FoodType.Produce))
             meals.updateValue(canadianBacon, forKey: canadianBacon.name!)
             breakfastMeals.updateValue(canadianBacon, forKey: canadianBacon.name!)
+            
+            
             
             let englishMuffin: Meal = Meal()
             englishMuffin.name = "English Muffin with Peanut Butter"
             englishMuffin.mealType = Meal.MealType.Breakfast
+
+            englishMuffin.instructions = "1. Toast English Muffin. \n2. Top with peanut butter and sliced apple. \n3. Serve with Latte or chai made from 1 cup milk."
+            englishMuffin.protein = 15
+            englishMuffin.carbs = 32
+            englishMuffin.fat = 8
+            englishMuffin.totaltime = 5
+            englishMuffin.calories = 260
+            englishMuffin.image = "english.png"
+            englishMuffin.ingredients = [FoodItem]()
+            englishMuffin.ingredients?.append(FoodItem(name: "English Muffin", price: 2.25, quantity: "1/2 slice", foodType: FoodItem.FoodType.Pantry))
+            englishMuffin.ingredients?.append(FoodItem(name: "Peanut Butter", price: 2.50, quantity: "1 tablespoon", foodType: FoodItem.FoodType.Pantry))
+            englishMuffin.ingredients?.append(FoodItem(name: "Apple", price: 1.00, quantity: "100 grams", foodType: FoodItem.FoodType.Produce))
+
             meals.updateValue(englishMuffin, forKey: englishMuffin.name!)
             breakfastMeals.updateValue(englishMuffin, forKey: englishMuffin.name!)
+            
+            
+            
+            
             
             let yogurtOats: Meal = Meal()
             yogurtOats.name = "Yogurt, Oats, and Raspberries"
             yogurtOats.mealType = Meal.MealType.Breakfast
+            yogurtOats.instructions = "1. Cook oats on medium heat with 1 cup water. \n2. Transfer cooked oats to bowl and add yogurt. \n3. Top with berries and honey."
+            yogurtOats.protein = 20
+            yogurtOats.carbs = 25
+            yogurtOats.fat = 5
+            yogurtOats.preptime = 5
+            yogurtOats.totaltime = 10
+            yogurtOats.calories = 225
+            yogurtOats.image = "yogurtoats.png"
+            yogurtOats.ingredients = [FoodItem]()
+            yogurtOats.ingredients?.append(FoodItem(name: "Rolled Oats", price: 1.50, quantity: "1/2 cup", foodType: FoodItem.FoodType.Pantry))
+            yogurtOats.ingredients?.append(FoodItem(name: "Honey", price: 1.50, quantity: "1 teaspoon", foodType: FoodItem.FoodType.Pantry))
+            yogurtOats.ingredients?.append(FoodItem(name: "Non-fat Greek Yogurt", price: 0.99, quantity: "6 ounces", foodType: FoodItem.FoodType.Dairy))
+            yogurtOats.ingredients?.append(FoodItem(name: "Raspberries", price: 1.50, quantity: ".5 cup", foodType: FoodItem.FoodType.Produce))
             meals.updateValue(yogurtOats, forKey: yogurtOats.name!)
             breakfastMeals.updateValue(yogurtOats, forKey: yogurtOats.name!)
         }
@@ -57,13 +106,16 @@ class MealPlanDao {
         if (lunchMeals.isEmpty) {
             let tunaFish: Meal = Meal()
             tunaFish.name = "Tuna Fish Melt Quesadilla"
-            tunaFish.instructions = "1.In a bowl, combine tuna, mayonnaise, mustard and onion.\n2. Place a heavy bottom skillet over medium heat. \n3. Place tomato slices on one half of wrap. Spread tuna mixture over tomatoes and top with mozzarella (the other half of the wrap will have nothing on it). \n4. Fold wrap in half and brush with olive oil. \n5. Place wrap in pan and cook until golden brown, about 3 minutes. Flip and cook 2 more minutes. Serve. \n"
+            tunaFish.instructions = "1. In a bowl, combine tuna, mayonnaise, mustard and onion.\n2. Place a heavy bottom skillet over medium heat. \n3. Place tomato slices on one half of wrap. Spread tuna mixture over tomatoes and top with mozzarella (the other half of the wrap will have nothing on it). \n4. Fold wrap in half and brush with olive oil. \n5. Place wrap in pan and cook until golden brown, about 3 minutes. Flip and cook 2 more minutes. Serve. \n"
             tunaFish.protein = 44
             tunaFish.carbs = 29
             tunaFish.fat = 12
             tunaFish.calories = 405
+            tunaFish.servings = 1
             tunaFish.mealType = Meal.MealType.Lunch
             tunaFish.image = "tuna.jpg"
+            tunaFish.preptime = 5
+            tunaFish.totaltime = 10
             tunaFish.ingredients = [FoodItem]()
             tunaFish.ingredients?.append(FoodItem(name: "Tuna", price: 2.99, quantity: "5 ounces", foodType: FoodItem.FoodType.Meat))
             tunaFish.ingredients?.append(FoodItem(name: "Mayonnaise", price: 4.99, quantity: "1 jar", foodType: FoodItem.FoodType.Pantry))
@@ -75,26 +127,74 @@ class MealPlanDao {
             let chickenWaldorf: Meal = Meal()
             chickenWaldorf.name = "Chicken Waldorf Salad"
             chickenWaldorf.mealType = Meal.MealType.Lunch
+            chickenWaldorf.instructions = "1. In a medium bowl, combine mayonnaise, yogurt and lemon juice.\n2. Mix in chicken, apple, celery, grapes and walnuts. Serve. \n"
+            chickenWaldorf.protein = 37
+            chickenWaldorf.carbs = 23
+            chickenWaldorf.fat = 17
+            chickenWaldorf.calories = 372
+            chickenWaldorf.preptime = 10
+            chickenWaldorf.totaltime = 10
+            chickenWaldorf.image = "waldorf.png"
+            chickenWaldorf.ingredients = [FoodItem]()
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Rotisserie Chicken", price: 4.99, quantity: "4 ounces", foodType: FoodItem.FoodType.Meat))
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Mayonnaise", price: 4.99, quantity: "1 tablespoon", foodType: FoodItem.FoodType.Pantry))
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Non-fat Greek Yogurt", price: 0.99, quantity: "1 tablespoon", foodType: FoodItem.FoodType.Dairy))
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Celery", price: 0.54, quantity: "1/4 cup", foodType: FoodItem.FoodType.Produce))
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Lemon", price: 0.50, quantity: "1/2 teaspoon juice", foodType: FoodItem.FoodType.Produce))
+             chickenWaldorf.ingredients?.append(FoodItem(name: "Apple", price: 0.70, quantity: "1/2", foodType: FoodItem.FoodType.Produce))
+             chickenWaldorf.ingredients?.append(FoodItem(name: "Grapes", price: 2.99, quantity: "1/2 cup", foodType: FoodItem.FoodType.Produce))
+            chickenWaldorf.ingredients?.append(FoodItem(name: "Walnuts", price: 1.99, quantity: "2 tablespoons", foodType: FoodItem.FoodType.Pantry))
             meals.updateValue(chickenWaldorf, forKey: chickenWaldorf.name!)
             lunchMeals.updateValue(chickenWaldorf, forKey: chickenWaldorf.name!)
             
             let whiteBean: Meal = Meal()
             whiteBean.name = "White Bean and Spinach Soup"
             whiteBean.mealType = Meal.MealType.Lunch
+            whiteBean.instructions = "1. Heat a large heavy bottom pot over medium heat. \n2. Add oil, carrot, onion and garlic. Cook, stirring constantly, for 3 minutes.\n3. Add 6 cups water, beans, sage and tomatoes. Bring to a simmer and cook for 10 minutes.\n4. Add spinach and salt. Bring back to a simmer and stir. \n5.Evenly divide into four soup bowls. Top each with 2 tablespoons Parmesan. Serve hot."
+            whiteBean.protein = 17
+            whiteBean.carbs = 37
+            whiteBean.preptime = 10
+            whiteBean.totaltime = 30
+            whiteBean.fat = 7
+            whiteBean.calories = 262
+            whiteBean.servings = 4
+            whiteBean.image = "whitebean.png"
+            whiteBean.ingredients = [FoodItem]()
+            whiteBean.ingredients?.append(FoodItem(name: "Olive Oil", price: 9.99, quantity: "2 tablespoons", foodType: FoodItem.FoodType.Pantry))
+            whiteBean.ingredients?.append(FoodItem(name: "Carrot", price: 0.60, quantity: "1", foodType: FoodItem.FoodType.Produce))
+            whiteBean.ingredients?.append(FoodItem(name: "Onion", price: 0.99, quantity: "1", foodType: FoodItem.FoodType.Produce))
+            whiteBean.ingredients?.append(FoodItem(name: "White Beans", price: 1.50, quantity: "1 can", foodType: FoodItem.FoodType.Pantry))
+            whiteBean.ingredients?.append(FoodItem(name: "Sage", price: 0.50, quantity: "2 teaspoon", foodType: FoodItem.FoodType.Produce))
+            whiteBean.ingredients?.append(FoodItem(name: "Canned Tomatoes", price: 0.99, quantity: "1 can", foodType: FoodItem.FoodType.Pantry))
+            whiteBean.ingredients?.append(FoodItem(name: "Spinach", price: 2.99, quantity: "8 cups", foodType: FoodItem.FoodType.Produce))
+            whiteBean.ingredients?.append(FoodItem(name: "Parmesan Cheese", price: 3.99, quantity: "8 tablespoons", foodType: FoodItem.FoodType.Dairy))
+             whiteBean.ingredients?.append(FoodItem(name: "Salt", price: 2.99, quantity: "1/2 teaspoon", foodType: FoodItem.FoodType.Pantry))
+
             meals.updateValue(whiteBean, forKey: whiteBean.name!)
             lunchMeals.updateValue(whiteBean, forKey: whiteBean.name!)
             
-            let chickPea: Meal = Meal()
-            chickPea.name = "Chickpea Salad"
-            chickPea.mealType = Meal.MealType.Lunch
-            meals.updateValue(chickPea, forKey: chickPea.name!)
-            lunchMeals.updateValue(chickPea, forKey: chickPea.name!)
+            let turkeyOpen: Meal = Meal()
+            turkeyOpen.name = "Turkey Open-Faced Sandwich"
+            turkeyOpen.mealType = Meal.MealType.Lunch
+            turkeyOpen.instructions = "1. Preheat oven to 375°. Place bacon on a sheet tray and cook in oven until browned, about 5 minutes. \n2. Spread mayonnaise on bread and top with lettuce, sliced turkey, tomato and bacon. Serve. \n"
+            turkeyOpen.protein = 35
+            turkeyOpen.carbs = 19
+            turkeyOpen.fat = 14
+            turkeyOpen.preptime = 5
+            turkeyOpen.totaltime = 10
+            turkeyOpen.calories = 286
+            turkeyOpen.image = "turkey.png"
+            turkeyOpen.ingredients = [FoodItem]()
+            turkeyOpen.ingredients?.append(FoodItem(name: "Turkey Bacon", price: 4.59, quantity: "2 slices", foodType: FoodItem.FoodType.Meat))
+            turkeyOpen.ingredients?.append(FoodItem(name: "Turkey Breast", price: 4.49, quantity: "3 ounces", foodType: FoodItem.FoodType.Meat))
+            turkeyOpen.ingredients?.append(FoodItem(name: "Mayonnaise", price: 4.99, quantity: "1 tablespoon", foodType: FoodItem.FoodType.Pantry))
+            turkeyOpen.ingredients?.append(FoodItem(name: "Tomato", price: 0.78, quantity: "2 slices", foodType: FoodItem.FoodType.Produce))
+            turkeyOpen.ingredients?.append(FoodItem(name: "Romaine Lettuce", price: 0.99, quantity: "2 leaves", foodType: FoodItem.FoodType.Produce))
+            turkeyOpen.ingredients?.append(FoodItem(name: "Whole Wheat Bread", price: 2.99, quantity: "1 slice", foodType: FoodItem.FoodType.Pantry))
+            meals.updateValue(turkeyOpen, forKey: turkeyOpen.name!)
+            lunchMeals.updateValue(turkeyOpen, forKey: turkeyOpen.name!)
             
-            let minestrone: Meal = Meal()
-            minestrone.name = "Minestrone Soup"
-            minestrone.mealType = Meal.MealType.Lunch
-            meals.updateValue(minestrone, forKey: minestrone.name!)
-            lunchMeals.updateValue(minestrone, forKey: minestrone.name!)
+
         }
         return lunchMeals.sorted {$0.key < $1.key}
     }
@@ -108,6 +208,9 @@ class MealPlanDao {
             herbCrusted.carbs = 14
             herbCrusted.fat = 9
             herbCrusted.calories = 253
+            herbCrusted.preptime = 5
+            herbCrusted.totaltime = 20
+            herbCrusted.servings = 1
             herbCrusted.mealType = Meal.MealType.Dinner
             herbCrusted.image = "salmon.jpg"
             herbCrusted.ingredients = [FoodItem]()

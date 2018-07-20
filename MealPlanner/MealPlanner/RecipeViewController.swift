@@ -41,7 +41,7 @@ class RecipeViewController : UIViewController, UITableViewDelegate, UITableViewD
         cals  = String(chosenMeals.calories!)
         
         for ing in chosenMeals.ingredients!{
-            ingredienttext = "\(ingredients) \(ing.quantity!)  \(ing.name!)\n"
+            ingredienttext = "\(ingredients) \(ing.quantity!)  \(ing.name!) \(ing.description!)\n"
         }
         
         instructionText = self.chosenMeals.instructions

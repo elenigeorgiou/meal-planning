@@ -14,6 +14,14 @@ class FoodItem {
         self.price = price
         self.quantity = quantity
         self.foodType = foodType
+        self.description = ""
+    }
+    init(name: String, price: Float, quantity: String, foodType: FoodType, description: String) {
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.foodType = foodType
+        self.description = description
     }
     
     enum FoodType {
@@ -28,4 +36,5 @@ class FoodItem {
     var price: Float?
     var quantity: String?
     var foodType: FoodType?
+    var description: String?
 }

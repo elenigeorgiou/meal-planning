@@ -221,6 +221,25 @@ class MealPlanDao {
             let broiledShrimp: Meal = Meal()
             broiledShrimp.name = "Broiled Shrimp with Lemon, Garlic and Spinach"
             broiledShrimp.mealType = Meal.MealType.Dinner
+            
+            broiledShrimp.instructions = "1. Preheat oven to broil.\n2. In a large bowl, combine shrimp, garlic, oregano, 2 teaspoons oil and pepper to taste; mix thoroughly. \n3. In another bowl, toss spinach, beans and remaining teaspoon oil.\n4. Place shrimp in a single layer on a sheet tray and broil until just pink, about 3 to 5 minutes, depending on your broiler. Remove from oven and toss with spinach. Return to oven and cook for 1 more minute.\n5. Place cracker crumb mixture on top of herbs and pat to make a crust.\n6. Squeeze lemon on shrimp and serve immediately."
+            broiledShrimp.protein = 25
+            broiledShrimp.carbs = 28
+            broiledShrimp.fat = 6
+            broiledShrimp.calories = 260
+            broiledShrimp.preptime = 5
+            broiledShrimp.totaltime = 10
+            broiledShrimp.servings = 1
+            broiledShrimp.image = "shrimp.png"
+            broiledShrimp.ingredients = [FoodItem]()
+            broiledShrimp.ingredients?.append(FoodItem(name: "Shrimp", price: 7.99, quantity: "4 ounces", foodType: FoodItem.FoodType.Meat, description: "peeled and deveined"))
+            broiledShrimp.ingredients?.append(FoodItem(name: "Spinach", price: 2.27, quantity: "500 grams", foodType: FoodItem.FoodType.Produce))
+            broiledShrimp.ingredients?.append(FoodItem(name: "Oregano", price: 3.00, quantity: "1 teaspoon", foodType: FoodItem.FoodType.Pantry))
+            broiledShrimp.ingredients?.append(FoodItem(name: "Olive Oil", price: 9.99, quantity: "3 teaspoons", foodType: FoodItem.FoodType.Pantry, description: "split"))
+            broiledShrimp.ingredients?.append(FoodItem(name: "Garlic", price: 4.23, quantity: "1 clove", foodType: FoodItem.FoodType.Pantry, description: "minced"))
+            broiledShrimp.ingredients?.append(FoodItem(name: "Pepper", price: 4.23, quantity: "1 pinch", foodType: FoodItem.FoodType.Pantry))
+            broiledShrimp.ingredients?.append(FoodItem(name: "White Beans", price: 1.50, quantity: "1/4 can", foodType: FoodItem.FoodType.Pantry))
+             broiledShrimp.ingredients?.append(FoodItem(name: "Lemon", price: 0.50, quantity: "1/2", foodType: FoodItem.FoodType.Pantry, description: "cut into wedges"))
             meals.updateValue(broiledShrimp, forKey: broiledShrimp.name!)
             dinnerMeals.updateValue(broiledShrimp, forKey: broiledShrimp.name!)
             

@@ -11,11 +11,6 @@ import UIKit
 class GroceriesTableViewController: UITableViewController {
 
     var haveList : [String] = ["Peanut Butter - 1 jar"]
-//    var produceList : [String] = ["Strawberries - 500 grams - $2.99","Onion - 2 - $0.54", "Spinach - 500 grams - $2.27"]
-//    var meatList : [String] = ["Tuna - 5 ounces - $2.99","Rotisserie Chicken - 1 - $5.27"]
-//    var pantryList : [String] = ["Mayonnaise - 1 jar - $4.99", "Mustard - 1 jar - $4.99", "Salt - 93 grams - $3.23", "Pepper - 93 grams - $4.23", "Whole Wheat Bread - 20 slices - $2.99"]
-//    var dairyList : [String] = ["Egg - 6 - $3.99"]
-    
     var checkedOff : [String : Bool] = [:]
     
     var chosenMeals: [Meal] = [Meal]()

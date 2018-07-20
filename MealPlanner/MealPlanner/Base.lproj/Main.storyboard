@@ -336,6 +336,7 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tq2-ip-FyT"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="860-3q-OOm"/>
                     <connections>

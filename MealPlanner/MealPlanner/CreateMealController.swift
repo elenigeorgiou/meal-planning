@@ -70,14 +70,7 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
         newRecipe.image = "default.png"
         newRecipe.totaltime = Int(totalmin.text!)
         newRecipe.ingredients = [FoodItem]()
-        MealPlanDao.meals.updateValue(newRecipe, forKey: newRecipe.name!)
-        if meal == Meal.MealType.Breakfast {
-              MealPlanDao.breakfastMeals.updateValue(newRecipe, forKey: newRecipe.name!)
-        } else if meal == Meal.MealType.Lunch {
-              MealPlanDao.lunchMeals.updateValue(newRecipe, forKey: newRecipe.name!)
-        } else {
-              MealPlanDao.dinnerMeals.updateValue(newRecipe, forKey: newRecipe.name!)
-        }
+        MealPlanDao.saveMeal(forType: meal, meal: newRecipe)
     }
 
     

@@ -95,7 +95,6 @@ class GroceriesTableViewController: UITableViewController {
             cell.textLabel?.text = name + quantity + price
             cell.contentView.backgroundColor = produceColor
         }
-        
         if (indexPath.section == 2) {
          //   cell.backgroundColor = [UIColor .purple]
             let item = groceriesPerType[FoodItem.FoodType.Meat]![indexPath.row]

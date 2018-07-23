@@ -23,10 +23,13 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var totalmin: UITextField!
     @IBOutlet var servings: UITextField!
     @IBOutlet var instructions: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     var pickerData : [String] = []
     override func viewDidLoad(){
         super.viewDidLoad()
+        self.view.addSubview(saveButton)
         mealType.delegate = self as UIPickerViewDelegate
         mealType.dataSource = self as UIPickerViewDataSource
         pickerData = ["Breakfast", "Lunch", "Dinner"]
@@ -54,11 +57,10 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  
+    @IBAction func buttonClick(sender: UIButton) {
         //save all data fields into Meal Dao!!!
-        let newRecipe: Meal = Meal()
-        newRecipe.name = recipeName.text!
+        var newRecipe.name = recipeName.text!
         newRecipe.instructions = instructions.text!
         newRecipe.protein = Int(protein.text!)
         newRecipe.carbs = Int(carbs.text!)

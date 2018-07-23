@@ -151,7 +151,7 @@
                     <navigationItem key="navigationItem" title="Choose Meals" id="XAA-CX-aqR">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="iO3-8A-39q">
                             <connections>
-                                <segue destination="ovD-0i-Vxe" kind="show" id="nsH-g1-LiN"/>
+                                <segue destination="ovD-0i-Vxe" kind="show" identifier="createMeal" id="nsH-g1-LiN"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="f81-Wb-cnT" colorLabel="IBBuiltInLabel-Blue">
@@ -177,66 +177,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-oT-490">
-                                <rect key="frame" x="19" y="111" width="334" height="30"/>
+                                <rect key="frame" x="19" y="135" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein (grams)" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QLy-gM-Wgf">
-                                <rect key="frame" x="19" y="149" width="334" height="30"/>
+                                <rect key="frame" x="19" y="173" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carbs (grams)" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l1i-YO-5Uw">
-                                <rect key="frame" x="19" y="187" width="334" height="30"/>
+                                <rect key="frame" x="19" y="211" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fats (grams)" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SJn-Dm-e1j">
-                                <rect key="frame" x="19" y="225" width="334" height="30"/>
+                                <rect key="frame" x="19" y="249" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y4t-g2-Ah4">
-                                <rect key="frame" x="19" y="263" width="334" height="30"/>
+                                <rect key="frame" x="19" y="287" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Servings" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-HX-9ZV">
-                                <rect key="frame" x="19" y="301" width="334" height="30"/>
+                                <rect key="frame" x="19" y="325" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Minutes" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pDt-R6-ijD">
-                                <rect key="frame" x="19" y="339" width="334" height="30"/>
+                                <rect key="frame" x="19" y="363" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="mealType" translatesAutoresizingMaskIntoConstraints="NO" id="fd9-41-4jK">
-                                <rect key="frame" x="16" y="14" width="334" height="89"/>
+                                <rect key="frame" x="16" y="18" width="334" height="109"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.17765343189999999" green="0.51659184690000004" blue="0.99851173159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instructions" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lKI-bh-MGX">
-                                <rect key="frame" x="16" y="377" width="334" height="30"/>
+                                <rect key="frame" x="16" y="401" width="334" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFp-FO-nre">
+                                <rect key="frame" x="88" y="439" width="190" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94846564529999999" green="0.42172020669999999" blue="0.21367567779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="buttonClickWithSender:" destination="ovD-0i-Vxe" eventType="touchUpInside" id="Vhm-5e-XMK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sbg-rL-te2"/>
@@ -249,6 +258,7 @@
                         <outlet property="mealType" destination="fd9-41-4jK" id="n2v-jO-7mq"/>
                         <outlet property="protein" destination="QLy-gM-Wgf" id="Ugx-om-c1X"/>
                         <outlet property="recipeName" destination="rMe-oT-490" id="t8S-Fb-ZEY"/>
+                        <outlet property="saveButton" destination="VFp-FO-nre" id="k4k-UL-5cC"/>
                         <outlet property="servings" destination="c7a-HX-9ZV" id="UaR-uK-kCu"/>
                         <outlet property="totalmin" destination="pDt-R6-ijD" id="VjB-JD-7P7"/>
                     </connections>

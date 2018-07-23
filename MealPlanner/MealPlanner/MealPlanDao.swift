@@ -292,6 +292,18 @@ class MealPlanDao {
         return dinnerMeals["Herb-Crusted Salmon"]!
     }
     
+    static func saveMeal(forType type: Meal.MealType, meal: Meal) {
+        switch type {
+        case Meal.MealType.Breakfast:
+            breakfastMeals[meal.name!] = meal
+        case Meal.MealType.Lunch:
+            lunchMeals[meal.name!] = meal
+        case Meal.MealType.Dinner:
+            dinnerMeals[meal.name!] = meal
+        }
+        meals[meal.name!] = meal
+    }
+    
     static func getGroceriesForMeals(forMeals meals: [Meal]) -> [FoodItem.FoodType: [FoodItem]] {
         var ingredientsByType: [FoodItem.FoodType: [FoodItem]] = [:]
         for meal in meals {

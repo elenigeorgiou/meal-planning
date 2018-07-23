@@ -11,15 +11,21 @@ import UIKit
 
 class ChooseMealsController: UITableViewController {
     @IBOutlet var choosemeals: [UITableViewCell]!
-    let breakfast = MealPlanDao.getBreakfastOptions()
-    let lunch = MealPlanDao.getLunchOptions()
-    let dinner = MealPlanDao.getDinnerOptions()
-    let meals = MealPlanDao.meals
+    var breakfast = MealPlanDao.getBreakfastOptions()
+    var lunch = MealPlanDao.getLunchOptions()
+    var dinner = MealPlanDao.getDinnerOptions()
     var breakfastMeal: Meal = Meal()
     var lunchMeal: Meal = Meal()
     var dinnerMeal: Meal = Meal()
     var chosenMeals: [Meal] = [Meal]()
    
+    override func viewDidAppear(_ animated: Bool) {
+        breakfast = MealPlanDao.getBreakfastOptions()
+        lunch = MealPlanDao.getLunchOptions()
+        dinner = MealPlanDao.getDinnerOptions()
+        self.tableView.reloadData()
+        super.viewDidAppear(animated)
+    }
     
     override func viewDidLoad() {
         

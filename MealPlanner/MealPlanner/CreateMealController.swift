@@ -60,7 +60,9 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
   
     @IBAction func buttonClick(sender: UIButton) {
         //save all data fields into Meal Dao!!!
-        var newRecipe.name = recipeName.text!
+        
+        let newRecipe:Meal = Meal()
+        newRecipe.name = recipeName.text!
         newRecipe.instructions = instructions.text!
         newRecipe.protein = Int(protein.text!)
         newRecipe.carbs = Int(carbs.text!)

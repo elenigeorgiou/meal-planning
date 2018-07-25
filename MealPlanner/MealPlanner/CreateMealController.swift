@@ -24,7 +24,7 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var servings: UITextField!
     @IBOutlet var instructions: UITextField!
     @IBOutlet weak var saveButton: UIButton!
-    
+    @IBOutlet weak var ingredients: UITextView!
     
     var pickerData : [String] = []
     override func viewDidLoad(){
@@ -71,10 +71,36 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
         newRecipe.mealType = meal
         newRecipe.image = "default.png"
         newRecipe.totaltime = Int(totalmin.text!)
-        newRecipe.ingredients = [FoodItem]()
+        newRecipe.ingredients = parseFood(str: ingredients.text!)
+        
         MealPlanDao.saveMeal(forType: meal, meal: newRecipe)
     }
-
+    
+    @IBOutlet weak var saved: UILabel!
+    
+    func parseFood(str: String) -> [FoodItem] {
+        var list = [FoodItem]()
+        var lines: [String] = []
+        str.enumerateLines { line, _ in
+            lines.append(line)
+        }
+        for line in lines {
+            var lineArr = line.components(separatedBy: " ")
+            let quantity = lineArr[0] + " " + lineArr[1]
+            let area = lineArr[2]
+            let areaType = area.lowercased() == "produce" ? FoodItem.FoodType.Produce : area.lowercased() == "dairy" ? FoodItem.FoodType.Dairy : area.lowercased() == "meat" || area.lowercased() == "fish" ? FoodItem.FoodType.Meat : FoodItem.FoodType.Pantry
+            lineArr.remove(at: 0)
+            lineArr.remove(at: 0)
+            lineArr.remove(at: 0)
+            let food = lineArr.joined(separator: " ")
+            let item = FoodItem(name: food, price: 0.00, quantity: quantity, foodType: areaType)
+            list.insert(item, at: 0)
+        }
+        saved.text  = "Saved"
+        self.view.addSubview(saved)
+        return list
+    
+    }
     
     func pickerView(_ picker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {

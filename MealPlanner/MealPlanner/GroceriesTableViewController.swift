@@ -10,8 +10,7 @@ import UIKit
 
 class GroceriesTableViewController: UITableViewController {
 
-    var haveList : [String] = ["Peanut Butter - 1 jar"]
-    var checkedOff : [String : Bool] = [:]
+    var haveList : [FoodItem] = []
     
     var chosenMeals: [Meal] = [Meal]()
     var groceriesPerType = [FoodItem.FoodType: [FoodItem]]()
@@ -80,7 +79,7 @@ class GroceriesTableViewController: UITableViewController {
             let item = groceriesPerType[FoodItem.FoodType.Dairy]![indexPath.row]
             let name = item.name! + " - "
             let quantity = item.quantity! + " - "
-            let price = String(format: "%.02f$", item.price!)
+            let price = String(format: "$%.02f", item.price!)
             cell.textLabel?.text = name + quantity + price
             cell.contentView.backgroundColor = dairyColor
     
@@ -91,7 +90,7 @@ class GroceriesTableViewController: UITableViewController {
             let item = groceriesPerType[FoodItem.FoodType.Produce]![indexPath.row]
             let name = item.name! + " - "
             let quantity = item.quantity! + " - "
-            let price = String(format: "%.02f$", item.price!)
+            let price = String(format: "$%.02f", item.price!)
             cell.textLabel?.text = name + quantity + price
             cell.contentView.backgroundColor = produceColor
         }
@@ -100,7 +99,7 @@ class GroceriesTableViewController: UITableViewController {
             let item = groceriesPerType[FoodItem.FoodType.Meat]![indexPath.row]
             let name = item.name! + " - "
             let quantity = item.quantity! + " - "
-            let price = String(format: "%.02f$", item.price!)
+            let price = String(format: "$%.02f", item.price!)
             cell.textLabel?.text = name + quantity + price
              cell.contentView.backgroundColor = meatColor
         }
@@ -110,15 +109,18 @@ class GroceriesTableViewController: UITableViewController {
             let item = groceriesPerType[FoodItem.FoodType.Pantry]![indexPath.row]
             let name = item.name! + " - "
             let quantity = item.quantity! + " - "
-            let price = String(format: "%.02f$", item.price!)
+            let price = String(format: "$%.02f", item.price!)
             cell.textLabel?.text = name + quantity + price
-             cell.contentView.backgroundColor = pantryColor
+            cell.contentView.backgroundColor = pantryColor
         }
         
         if (indexPath.section == 4) {
-        //    cell.backgroundColor = [UIColor .yellow]
-              cell.textLabel?.text = haveList[indexPath.row]
-             cell.contentView.backgroundColor = haveColor
+            let item = haveList[indexPath.row]
+            let name = item.name! + " - "
+            let quantity = item.quantity! + " - "
+            let price = String(format: "$%.02f", item.price!)
+            cell.textLabel?.text = name + quantity + price
+            cell.contentView.backgroundColor = haveColor
         }
         
         return cell
@@ -156,14 +158,34 @@ class GroceriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
-            if cell.accessoryType == .checkmark {
-                cell.accessoryType = .none
-                checkedOff[(cell.textLabel?.text)!] = false
+            
+            if (indexPath.section != 4) {
+                let selectedItem = groceriesPerType.values.flatMap { $0 }.filter {
+                    let a: String = $0.name! + " - " + $0.quantity! + " - " + String(format: "$%.02f", $0.price!)
+                    return a == (cell.textLabel?.text)!
+                }.first!
+                haveList.append(selectedItem)
+                var arr = groceriesPerType[selectedItem.foodType!]!
+                let index = arr.index {
+                    let a: String = $0.name! + " - " + $0.quantity! + " - " + String(format: "$%.02f", $0.price!)
+                    return a == (cell.textLabel?.text)!
+                }
+                arr.remove(at: index!)
+                groceriesPerType[selectedItem.foodType!] = arr
             } else {
-                cell.accessoryType = .checkmark
-                checkedOff[(cell.textLabel?.text)!] = true
+                let selectedItem = haveList.filter {
+                    let a: String = $0.name! + " - " + $0.quantity! + " - " + String(format: "$%.02f", $0.price!)
+                    return a == (cell.textLabel?.text)!
+                }.first!
+                let index = haveList.index {
+                    let a: String = $0.name! + " - " + $0.quantity! + " - " + String(format: "$%.02f", $0.price!)
+                    return a == (cell.textLabel?.text)!
+                }
+                haveList.remove(at: index!)
+                groceriesPerType[selectedItem.foodType!]?.append(selectedItem)
             }
-           
+            
+            self.tableView.reloadData()
         }
         
         

@@ -96,8 +96,9 @@ class CreateMealController: UIViewController, UIPickerViewDelegate, UIPickerView
             let item = FoodItem(name: food, price: 0.00, quantity: quantity, foodType: areaType)
             list.insert(item, at: 0)
         }
-        saved.text  = "Saved"
-        self.view.addSubview(saved)
+        saveButton.backgroundColor = .white
+        self.view.addSubview(saveButton)
+        _ = navigationController?.popViewController(animated: true)
         return list
     
     }

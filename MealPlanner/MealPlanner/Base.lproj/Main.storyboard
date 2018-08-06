@@ -151,7 +151,7 @@
                     <navigationItem key="navigationItem" title="Choose Meals" id="XAA-CX-aqR">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="iO3-8A-39q">
                             <connections>
-                                <segue destination="ovD-0i-Vxe" kind="show" identifier="createMeal" id="nsH-g1-LiN"/>
+                                <segue destination="qdH-iT-xDP" kind="show" id="Nnd-SW-i0d"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="f81-Wb-cnT" colorLabel="IBBuiltInLabel-Blue">
@@ -173,7 +173,7 @@
             <objects>
                 <viewController title="Create A Meal" id="ovD-0i-Vxe" customClass="CreateMealController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ir8-eP-2iJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="natural" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-oT-490">
@@ -296,6 +296,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-hl-CAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="1689.8050974512746"/>
+        </scene>
+        <!--Eureka Simple View Controller-->
+        <scene sceneID="fJV-gT-zZH">
+            <objects>
+                <viewController id="qdH-iT-xDP" customClass="EurekaSimpleViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TfU-0x-i1r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TSd-SS-OXa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-gz-X3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="1669"/>
         </scene>
         <!--Grocery Nav-->
         <scene sceneID="fan-is-BP5">

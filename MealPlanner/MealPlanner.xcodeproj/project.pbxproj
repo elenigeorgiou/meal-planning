@@ -15,9 +15,13 @@
 		1435C6A420CAFB1800F72851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1435C6A220CAFB1800F72851 /* LaunchScreen.storyboard */; };
 		1435C6AF20CAFB1800F72851 /* MealPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6AE20CAFB1800F72851 /* MealPlannerTests.swift */; };
 		1435C6BA20CAFB1800F72851 /* MealPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */; };
+		143E70462118B4900023D7C3 /* EurekaSimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143E70452118B4900023D7C3 /* EurekaSimpleViewController.swift */; };
 		148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148569F420E405790077CC90 /* ChooseMealViewController.swift */; };
 		14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */; };
 		14D1918B2102323B00102844 /* CreateMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1918A2102323B00102844 /* CreateMealController.swift */; };
+		14EEF1CD21189EC700545DC4 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEF1CA21189E8000545DC4 /* Eureka.framework */; };
+		14EEF1CE21189EC700545DC4 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EEF1CA21189E8000545DC4 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14EEF1D321189EF900545DC4 /* MyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EEF1D221189EF900545DC4 /* MyFormViewController.swift */; };
 		9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */; };
 		9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */; };
 		9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659C31920EC037000799A45 /* MealPlanDao.swift */; };
@@ -43,7 +47,42 @@
 			remoteGlobalIDString = 1435C69520CAFB1600F72851;
 			remoteInfo = MealPlanner;
 		};
+		14EEF1C921189E8000545DC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DEB1B9A4F5E004A00EB;
+			remoteInfo = Eureka;
+		};
+		14EEF1CB21189E8000545DC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DF51B9A4F5E004A00EB;
+			remoteInfo = EurekaTests;
+		};
+		14EEF1CF21189EC700545DC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
+			remoteInfo = Eureka;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14EEF1D121189EC700545DC4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14EEF1CE21189EC700545DC4 /* Eureka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1407123320E6683000A9F276 /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +99,12 @@
 		1435C6B520CAFB1800F72851 /* MealPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerUITests.swift; sourceTree = "<group>"; };
 		1435C6BB20CAFB1800F72851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		143E70452118B4900023D7C3 /* EurekaSimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaSimpleViewController.swift; sourceTree = "<group>"; };
 		148569F420E405790077CC90 /* ChooseMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMealViewController.swift; sourceTree = "<group>"; };
 		14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanNavigationController.swift; sourceTree = "<group>"; };
 		14D1918A2102323B00102844 /* CreateMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealController.swift; sourceTree = "<group>"; };
+		14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = ../Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
+		14EEF1D221189EF900545DC4 /* MyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFormViewController.swift; sourceTree = "<group>"; };
 		9604FCC120DA843800E9BB62 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
 		9604FCC320DA984B00E9BB62 /* GroceriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesTableViewController.swift; sourceTree = "<group>"; };
 		9659C31920EC037000799A45 /* MealPlanDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanDao.swift; sourceTree = "<group>"; };
@@ -79,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */,
+				14EEF1CD21189EC700545DC4 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +145,7 @@
 		1435C68D20CAFB1600F72851 = {
 			isa = PBXGroup;
 			children = (
+				14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */,
 				1435C69820CAFB1600F72851 /* MealPlanner */,
 				1435C6AD20CAFB1800F72851 /* MealPlannerTests */,
 				1435C6B820CAFB1800F72851 /* MealPlannerUITests */,
@@ -123,10 +167,12 @@
 		1435C69820CAFB1600F72851 /* MealPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				14EEF1D221189EF900545DC4 /* MyFormViewController.swift */,
 				1435C69920CAFB1600F72851 /* AppDelegate.swift */,
 				1407123320E6683000A9F276 /* NutritionViewController.swift */,
 				14D1918A2102323B00102844 /* CreateMealController.swift */,
 				1435C69D20CAFB1600F72851 /* Main.storyboard */,
+				143E70452118B4900023D7C3 /* EurekaSimpleViewController.swift */,
 				1407123720E674F200A9F276 /* RecipeViewController.swift */,
 				1435C6A020CAFB1800F72851 /* Assets.xcassets */,
 				1435C6A220CAFB1800F72851 /* LaunchScreen.storyboard */,
@@ -162,6 +208,15 @@
 			path = MealPlannerUITests;
 			sourceTree = "<group>";
 		};
+		14EEF1C521189E8000545DC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14EEF1CA21189E8000545DC4 /* Eureka.framework */,
+				14EEF1CC21189E8000545DC4 /* EurekaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		96DEEEC620D8BA3A00945186 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +235,12 @@
 				1435C69220CAFB1600F72851 /* Sources */,
 				1435C69320CAFB1600F72851 /* Frameworks */,
 				1435C69420CAFB1600F72851 /* Resources */,
+				14EEF1D121189EC700545DC4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14EEF1D021189EC700545DC4 /* PBXTargetDependency */,
 			);
 			name = MealPlanner;
 			productName = MealPlanner;
@@ -261,6 +318,12 @@
 			mainGroup = 1435C68D20CAFB1600F72851;
 			productRefGroup = 1435C69720CAFB1600F72851 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 14EEF1C521189E8000545DC4 /* Products */;
+					ProjectRef = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1435C69520CAFB1600F72851 /* MealPlanner */,
@@ -269,6 +332,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		14EEF1CA21189E8000545DC4 /* Eureka.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Eureka.framework;
+			remoteRef = 14EEF1C921189E8000545DC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		14EEF1CC21189E8000545DC4 /* EurekaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EurekaTests.xctest;
+			remoteRef = 14EEF1CB21189E8000545DC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1435C69420CAFB1600F72851 /* Resources */ = {
@@ -303,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1435C69A20CAFB1600F72851 /* AppDelegate.swift in Sources */,
+				14EEF1D321189EF900545DC4 /* MyFormViewController.swift in Sources */,
 				148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */,
 				9659C31A20EC037000799A45 /* MealPlanDao.swift in Sources */,
 				9686955120F2FD8A000D9116 /* IngredientQuantity.swift in Sources */,
@@ -313,6 +394,7 @@
 				1407123420E6683000A9F276 /* NutritionViewController.swift in Sources */,
 				9604FCC220DA843800E9BB62 /* MealPlanTableViewController.swift in Sources */,
 				9604FCC420DA984B00E9BB62 /* GroceriesTableViewController.swift in Sources */,
+				143E70462118B4900023D7C3 /* EurekaSimpleViewController.swift in Sources */,
 				14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */,
 				9686955320F2FDEC000D9116 /* Ingredient.swift in Sources */,
 			);
@@ -346,6 +428,11 @@
 			isa = PBXTargetDependency;
 			target = 1435C69520CAFB1600F72851 /* MealPlanner */;
 			targetProxy = 1435C6B620CAFB1800F72851 /* PBXContainerItemProxy */;
+		};
+		14EEF1D021189EC700545DC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			targetProxy = 14EEF1CF21189EC700545DC4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -486,6 +573,7 @@
 		1435C6BF20CAFB1800F72851 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +593,7 @@
 		1435C6C020CAFB1800F72851 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

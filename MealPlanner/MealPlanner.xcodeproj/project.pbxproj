@@ -16,6 +16,8 @@
 		1435C6AF20CAFB1800F72851 /* MealPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6AE20CAFB1800F72851 /* MealPlannerTests.swift */; };
 		1435C6BA20CAFB1800F72851 /* MealPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */; };
 		143E70462118B4900023D7C3 /* EurekaSimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143E70452118B4900023D7C3 /* EurekaSimpleViewController.swift */; };
+		143E70572118D7280023D7C3 /* SplitRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E70522118D71B0023D7C3 /* SplitRow.framework */; };
+		143E70582118D7280023D7C3 /* SplitRow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 143E70522118D71B0023D7C3 /* SplitRow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		148569F520E405790077CC90 /* ChooseMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148569F420E405790077CC90 /* ChooseMealViewController.swift */; };
 		14C0D59720EABD9E00B125DA /* MealPlanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */; };
 		14D1918B2102323B00102844 /* CreateMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1918A2102323B00102844 /* CreateMealController.swift */; };
@@ -47,6 +49,41 @@
 			remoteGlobalIDString = 1435C69520CAFB1600F72851;
 			remoteInfo = MealPlanner;
 		};
+		143E704F2118D71B0023D7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 79B5CB261FD4756500983E52;
+			remoteInfo = "[CP] SplitRow";
+		};
+		143E70512118D71B0023D7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7983DCB420B0C44500963F05;
+			remoteInfo = "[Carthage] SplitRow";
+		};
+		143E70532118D71B0023D7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 79B5CB2F1FD4756500983E52;
+			remoteInfo = SplitRowTests;
+		};
+		143E70552118D71B0023D7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 797710751FDAD27100917866;
+			remoteInfo = Example;
+		};
+		143E70592118D7280023D7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7983DCA420B0C44500963F05;
+			remoteInfo = "[Carthage] SplitRow";
+		};
 		14EEF1C921189E8000545DC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
@@ -77,6 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				143E70582118D7280023D7C3 /* SplitRow.framework in Embed Frameworks */,
 				14EEF1CE21189EC700545DC4 /* Eureka.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -100,6 +138,7 @@
 		1435C6B920CAFB1800F72851 /* MealPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerUITests.swift; sourceTree = "<group>"; };
 		1435C6BB20CAFB1800F72851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		143E70452118B4900023D7C3 /* EurekaSimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaSimpleViewController.swift; sourceTree = "<group>"; };
+		143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplitRow.xcodeproj; path = ../SplitRow/SplitRow.xcodeproj; sourceTree = "<group>"; };
 		148569F420E405790077CC90 /* ChooseMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMealViewController.swift; sourceTree = "<group>"; };
 		14C0D59620EABD9E00B125DA /* MealPlanNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanNavigationController.swift; sourceTree = "<group>"; };
 		14D1918A2102323B00102844 /* CreateMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealController.swift; sourceTree = "<group>"; };
@@ -121,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96DEEEC820D8BA3A00945186 /* libsqlite3.tbd in Frameworks */,
+				143E70572118D7280023D7C3 /* SplitRow.framework in Frameworks */,
 				14EEF1CD21189EC700545DC4 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +185,7 @@
 		1435C68D20CAFB1600F72851 = {
 			isa = PBXGroup;
 			children = (
+				143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */,
 				14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */,
 				1435C69820CAFB1600F72851 /* MealPlanner */,
 				1435C6AD20CAFB1800F72851 /* MealPlannerTests */,
@@ -208,6 +249,17 @@
 			path = MealPlannerUITests;
 			sourceTree = "<group>";
 		};
+		143E70492118D71B0023D7C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				143E70502118D71B0023D7C3 /* SplitRow.framework */,
+				143E70522118D71B0023D7C3 /* SplitRow.framework */,
+				143E70542118D71B0023D7C3 /* SplitRowTests.xctest */,
+				143E70562118D71B0023D7C3 /* Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		14EEF1C521189E8000545DC4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +293,7 @@
 			);
 			dependencies = (
 				14EEF1D021189EC700545DC4 /* PBXTargetDependency */,
+				143E705A2118D7280023D7C3 /* PBXTargetDependency */,
 			);
 			name = MealPlanner;
 			productName = MealPlanner;
@@ -323,6 +376,10 @@
 					ProductGroup = 14EEF1C521189E8000545DC4 /* Products */;
 					ProjectRef = 14EEF1C421189E8000545DC4 /* Eureka.xcodeproj */;
 				},
+				{
+					ProductGroup = 143E70492118D71B0023D7C3 /* Products */;
+					ProjectRef = 143E70482118D71B0023D7C3 /* SplitRow.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -334,6 +391,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		143E70502118D71B0023D7C3 /* SplitRow.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SplitRow.framework;
+			remoteRef = 143E704F2118D71B0023D7C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		143E70522118D71B0023D7C3 /* SplitRow.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SplitRow.framework;
+			remoteRef = 143E70512118D71B0023D7C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		143E70542118D71B0023D7C3 /* SplitRowTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SplitRowTests.xctest;
+			remoteRef = 143E70532118D71B0023D7C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		143E70562118D71B0023D7C3 /* Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Example.app;
+			remoteRef = 143E70552118D71B0023D7C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		14EEF1CA21189E8000545DC4 /* Eureka.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -428,6 +513,11 @@
 			isa = PBXTargetDependency;
 			target = 1435C69520CAFB1600F72851 /* MealPlanner */;
 			targetProxy = 1435C6B620CAFB1800F72851 /* PBXContainerItemProxy */;
+		};
+		143E705A2118D7280023D7C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "[Carthage] SplitRow";
+			targetProxy = 143E70592118D7280023D7C3 /* PBXContainerItemProxy */;
 		};
 		14EEF1D021189EC700545DC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

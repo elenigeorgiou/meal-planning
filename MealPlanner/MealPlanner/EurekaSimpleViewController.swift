@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Eureka
+import SplitRow
 
 class EurekaSimpleViewController: FormViewController {
     
@@ -62,7 +63,7 @@ class EurekaSimpleViewController: FormViewController {
                 row.value = ""
             }
             <<< TextRow(FormItems.carbs) { row in
-                row.title = "Carb"
+                row.title = "Carbs"
                 row.placeholder = "grams"
                 row.value = ""
             }
@@ -92,22 +93,37 @@ class EurekaSimpleViewController: FormViewController {
                                     }
                                     
                                     $0.multivaluedRowToInsertAt = { index in
-                                        return TextRow("tag\(index+1)") {
-                                            $0.placeholder = "Ingredient"
+                                        return SplitRow<PushRow<String>, TextRow>("tag\(index+1)") {
+                                                $0.rowLeft = PushRow<String>(){
+                                                    $0.selectorTitle = "Category"
+                                                    $0.value = "Pantry"
+                                                    $0.options = ["Pantry","Produce","Dairy","Meat"]
+                                                }
+                                                $0.rowRight = TextRow(){
+                                                    $0.placeholder = "Quantity Ingredient"
+                                                }
                                         }
                                     }
-                                    $0 <<< TextRow("tag1") {
-                                        $0.placeholder = "Add Ingredient"
-                            
-
+                                    
+                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tag1") {
+                                        $0.rowLeft = PushRow<String>(){
+                                            $0.selectorTitle = "Category"
+                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
+                                            $0.value = "Pantry"
+                                        }
+                                        $0.rowRight = TextRow(){
+                                            $0.placeholder = "Quantity Ingredient"
+                                        }
                                     }
+                            
                                     
             }
             +++ Section("")
             
             <<< ButtonRow() { row in
                 row.title = "Save"
-                row.cell.tintColor = .black
+                row.cell.tintColor = .white
+                row.cell.backgroundColor = .gray
                 }.onCellSelection{cell,row in
                     self.save()
         }
@@ -117,7 +133,7 @@ class EurekaSimpleViewController: FormViewController {
     func save() {
         let formvalues = self.form.values()
         // print(formvalues[FormItems.name] as! String)
-        print(formvalues)
+      //  print(formvalues)
         var mealType = formvalues[FormItems.mealType] as? String
         var meal: Meal.MealType = Meal.MealType.Breakfast
         if mealType == "Breakfast" {
@@ -129,13 +145,16 @@ class EurekaSimpleViewController: FormViewController {
         }
         
         var list = [FoodItem]()
-        let values : [String] = formvalues["ingredientsList"] as! [String]
-        for text in values {
+        print(formvalues["ingredientsList"])
+        let values : [SplitRowValue] = formvalues["ingredientsList"] as! [SplitRowValue<String, String>]
+    
+        for entry in values {
+            let area :String = (entry.left as String?)!
+            let text : String = (entry.right as String?)!
             var lineArr = text.lowercased().components(separatedBy: " ")
             let quantity = lineArr[0] + " " + lineArr[1]
-            let area = lineArr[2]
             let areaType = area.lowercased() == "produce" ? FoodItem.FoodType.Produce : area.lowercased() == "dairy" ? FoodItem.FoodType.Dairy : area.lowercased() == "meat" || area.lowercased() == "fish" ? FoodItem.FoodType.Meat : FoodItem.FoodType.Pantry
-            let food = lineArr[3]
+            let food = lineArr[2]
             let item = FoodItem(name: food, price: 0.00, quantity: quantity, foodType: areaType)
             list.insert(item, at: 0)
             

@@ -297,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="1528.8" y="1689.8050974512746"/>
         </scene>
-        <!--Eureka Simple View Controller-->
+        <!--Create Meal-->
         <scene sceneID="fJV-gT-zZH">
             <objects>
-                <viewController id="qdH-iT-xDP" customClass="EurekaSimpleViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Meal" id="qdH-iT-xDP" customClass="EurekaSimpleViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TfU-0x-i1r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

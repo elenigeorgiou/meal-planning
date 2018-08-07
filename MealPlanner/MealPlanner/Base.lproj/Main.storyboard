@@ -14,7 +14,7 @@
         <scene sceneID="Kgq-xR-ghH">
             <objects>
                 <tableViewController id="8nT-Zb-dnH" customClass="MealPlanTableViewController" customModule="MealPlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="utG-GM-iR7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="utG-GM-iR7" customClass="MealPlanTableViewControler">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -58,7 +58,7 @@
                                     <outlet property="mealType" destination="d5D-1P-adJ" id="rp1-L3-rST"/>
                                     <outlet property="nutritionInfo" destination="BdV-Dt-7kl" id="itj-aZ-PPw"/>
                                     <outlet property="recipeName" destination="Px4-uO-e5I" id="0uV-fD-jZl"/>
-                                    <segue destination="m3F-Z3-Zes" kind="show" id="wDx-q9-cj0"/>
+                                    <segue destination="m3F-Z3-Zes" kind="show" identifier="recipeSegue" id="wDx-q9-cj0"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="TUF-XL-neE" customClass="NutritionCardCell" customModule="MealPlanner" customModuleProvider="target">

@@ -70,30 +70,28 @@ class MealPlanTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2//4
+        return 1//4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if(section == 0) {//3) {
-            return 3 //4
+            return 4
         }
         return 1
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RecipeCardCell {
         
         if (indexPath.row == 0 && indexPath.section == 0) {
             print("here")
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCardCell
             cell.recipeNameLabel?.lineBreakMode = .byWordWrapping
             cell.recipeNameLabel?.numberOfLines = 0
-            
             cell.mealTypeLabel?.text = "Breakfast"
             cell.recipeNameLabel?.text = chosenMeals[0].name //"Scrambled Egg Sandwich"
             cell.imageLabel?.image = UIImage(named:chosenMeals[0].image!)
-            tableView.addSubview(cell)
             return cell
         }
         
@@ -118,7 +116,7 @@ class MealPlanTableViewController: UITableViewController {
             return cell
         }
         
-        else if (indexPath.section == 1) {
+        else if (indexPath.row == 3) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! NutritionCardCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
            // cell.selectionStyle = .none
@@ -134,10 +132,10 @@ class MealPlanTableViewController: UITableViewController {
            // if(indexPath.row == 3) {
                 cell.caloriesLabel?.text = "Calories: \t \(cals!) out of \(goalcals!) calories"
            // }
-            return cell
+            //return cell
         }
         
-        return UITableViewCell()
+        return RecipeCardCell()
     }
  
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

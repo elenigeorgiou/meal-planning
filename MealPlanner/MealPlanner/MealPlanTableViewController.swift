@@ -25,6 +25,8 @@ class MealPlanTableViewController: UITableViewController {
     
     
     override func viewDidLoad() {
+        self.tableView.register(RecipeCardCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(NutritionCardCell.self, forCellReuseIdentifier: "cell2")
         if chosenMeals.isEmpty {
             chosenMeals = [MealPlanDao.getDefaultBreakfast(), MealPlanDao.getDefaultLunch(), MealPlanDao.getDefaultDinner()]
         }
@@ -44,6 +46,8 @@ class MealPlanTableViewController: UITableViewController {
 //
 //        
         self.clearsSelectionOnViewWillAppear = false
+        tableView.delegate = self
+        tableView.dataSource = self
         super.viewDidLoad()
         print(chosenMeals)
        
@@ -66,73 +70,94 @@ class MealPlanTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 2//4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(section == 3) {
-            return 4
+        if(section == 0) {//3) {
+            return 3 //4
         }
         return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        cell.textLabel?.lineBreakMode = .byWordWrapping
-        cell.textLabel?.numberOfLines = 0
-        // Configure the cell...
-        if (indexPath.section == 0) {
-            cell.textLabel?.text = chosenMeals[0].name //"Scrambled Egg Sandwich"
+        
+        if (indexPath.row == 0 && indexPath.section == 0) {
+            print("here")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCardCell
+            cell.recipeNameLabel?.lineBreakMode = .byWordWrapping
+            cell.recipeNameLabel?.numberOfLines = 0
+            
+            cell.mealTypeLabel?.text = "Breakfast"
+            cell.recipeNameLabel?.text = chosenMeals[0].name //"Scrambled Egg Sandwich"
+            cell.imageLabel?.image = UIImage(named:chosenMeals[0].image!)
+            tableView.addSubview(cell)
+            return cell
         }
         
-        if (indexPath.section == 1) {
-            cell.textLabel?.text = chosenMeals[1].name // "Tuna Fish Melt Quesadilla"
+        else if (indexPath.row == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCardCell
+            cell.recipeNameLabel?.lineBreakMode = .byWordWrapping
+            cell.recipeNameLabel?.numberOfLines = 0
+            cell.mealTypeLabel?.text = "Lunch"
+            cell.recipeNameLabel?.text = chosenMeals[1].name // "Tuna Fish Melt Quesadilla"
+            cell.imageLabel?.image = UIImage(named:chosenMeals[1].image!)
+            return cell
         }
         
-        if (indexPath.section == 2) {
-            cell.textLabel?.text = chosenMeals[2].name //"Herb-Crusted Salmon"
+        else if (indexPath.row == 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCardCell
+            cell.recipeNameLabel?.lineBreakMode = .byWordWrapping
+            cell.recipeNameLabel?.numberOfLines = 0
+            
+            cell.mealTypeLabel?.text = "Dinner"
+            cell.recipeNameLabel?.text = chosenMeals[2].name //"Herb-Crusted Salmon"
+            cell.imageLabel?.image = UIImage(named:chosenMeals[2].image!)
+            return cell
         }
         
-        if (indexPath.section == 3) {
+        else if (indexPath.section == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! NutritionCardCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
            // cell.selectionStyle = .none
-            if(indexPath.row == 0) {
-                cell.textLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!) grams"
-            }
-            if(indexPath.row == 1) {
-                cell.textLabel?.text = "Fats: \t \(fats!) out of \(goalfats!) grams"
-            }
-            if(indexPath.row == 2) {
-                cell.textLabel?.text = "Carbs: \t \(carbs!) out of \(goalcarbs!) grams"
-            }
-            if(indexPath.row == 3) {
-                cell.textLabel?.text = "Calories: \t \(cals!) out of \(goalcals!) calories"
-            }
+           // if(indexPath.row == 0) {
+                cell.proteinLabel?.text = "Protein: \t \(protein!) out of \(goalprotein!) grams"
+            //}
+            //if(indexPath.row == 1) {
+                cell.fatsLabel?.text = "Fats: \t \(fats!) out of \(goalfats!) grams"
+            //}
+           // if(indexPath.row == 2) {
+                cell.carbsLabel?.text = "Carbs: \t \(carbs!) out of \(goalcarbs!) grams"
+           // }
+           // if(indexPath.row == 3) {
+                cell.caloriesLabel?.text = "Calories: \t \(cals!) out of \(goalcals!) calories"
+           // }
+            return cell
         }
         
-        return cell
+        return UITableViewCell()
     }
  
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var mealType = ""
-        
-        if (section == 0) {
-            mealType = "Breakfast"
-        }
-        
-        if (section == 1) {
-            mealType = "Lunch"
-        }
-        
-        if (section == 2) {
-            mealType = "Dinner"
-        }
-        if(section == 3) {
-            mealType = "Nutrition Information"
-        }
-        
+     //   return 2
+//        if (section == 0) {
+//            mealType = "Breakfast"
+//        }
+//
+//        if (section == 1) {
+//            mealType = "Lunch"
+//        }
+//
+//        if (section == 2) {
+//            mealType = "Dinner"
+//        }
+//        if(section == 3) {
+//            mealType = "Nutrition Information"
+//        }
+//
         return mealType
     }
  
@@ -140,16 +165,16 @@ class MealPlanTableViewController: UITableViewController {
         if segue.identifier == "RecipeSegue" {
             if let indexPath =  tableView.indexPathForSelectedRow {
                 var text : Meal = Meal()
-                if (indexPath.section == 0) {
+                if (indexPath.row == 0  && indexPath.section == 0) {
 //                    text = chosenMeals[0].name!
                     text = chosenMeals[0]
                 }
                 
-                if (indexPath.section == 1) {
+                if (indexPath.row == 1) {
                     text = chosenMeals[1]
                 }
                 
-                if (indexPath.section == 2 || indexPath.section == 3) {
+                if (indexPath.row == 2 || indexPath.row == 3) {
                     text = chosenMeals[2]
                 }
                 let controller = segue.destination as! RecipeViewController

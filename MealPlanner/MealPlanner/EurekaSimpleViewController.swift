@@ -124,6 +124,7 @@ class EurekaSimpleViewController: FormViewController {
                 row.title = "Save"
                 row.cell.tintColor = .white
                 row.cell.backgroundColor = .gray
+                row.cell.layer.cornerRadius = 2
                 }.onCellSelection{cell,row in
                     self.save()
         }
@@ -145,7 +146,6 @@ class EurekaSimpleViewController: FormViewController {
         }
         
         var list = [FoodItem]()
-        print(formvalues["ingredientsList"])
         let values : [SplitRowValue] = formvalues["ingredientsList"] as! [SplitRowValue<String, String>]
     
         for entry in values {

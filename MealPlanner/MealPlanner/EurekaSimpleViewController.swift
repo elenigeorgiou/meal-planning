@@ -32,6 +32,7 @@ class EurekaSimpleViewController: FormViewController {
         super.viewDidLoad()
         
         form +++ Section("Create Your Own")
+            
             <<< TextRow(FormItems.name) { row in
                 row.title = "Recipe Name"
                 row.placeholder = "Recipe"
@@ -81,6 +82,47 @@ class EurekaSimpleViewController: FormViewController {
                 row.value = ""
             }
             
+            <<< SwitchRow("switchRowTag") {
+                $0.title = "Guide Me"
+            }
+            <<< PushRow<String>("leanProtein"){
+                $0.hidden = Condition.function(["switchRowTag"], { form in
+                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                })
+                $0.title = "Choose a Lean Protein"
+                $0.selectorTitle = "Choose a Lean Protein"
+                $0.options = ["4 oz Chicken Breast","2 whole eggs","5 oz salmon", "2 slices turkey bacon", "5 oz cod", "1/2 cup black beans"]
+                $0.value = "4 oz chicken breast"    // initially selected
+            }
+            <<< PushRow<String>("healthyCarb"){
+                $0.hidden = Condition.function(["switchRowTag"], { form in
+                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                })
+                $0.title = "Choose a Whole Grain or Starch"
+                $0.selectorTitle = "Choose a Whole Grain or Starch"
+                $0.options = ["1/2 cup oats","1/2 cup sweet potato","1 slice whole grain bread"]
+                $0.value = "1/2 cup sweet potato"    // initially selected
+            }
+            <<< PushRow<String>("veggies"){
+                $0.hidden = Condition.function(["switchRowTag"], { form in
+                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                })
+                $0.title = "Choose Vegetables and Fruit"
+                $0.selectorTitle = "Choose Vegetables and Fruit"
+                $0.options = ["1 cup spinach","1 cup cucumber","1 tomato", "1/2 cup bell pepper", "1/2 cup berries", "1 whole apple", "1 banana", "1/2 cup mushrooms", "1 cup arugula"]
+                $0.value = "1 cup spinach" //, "1/2 cup bell pepper">    // initially selected
+            }
+            <<< PushRow<String>("healthyFats"){
+                $0.hidden = Condition.function(["switchRowTag"], { form in
+                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                })
+                $0.title = "Choose a Healthy Fat"
+                $0.selectorTitle = "Choose a Healthy Fat"
+                $0.options = ["1 tbsp almond butter","60 grams avocado","1 tbsp olive oil", "1 tbsp coconut oil"]
+                $0.value = "60 grams avocado"    // initially selected
+            }
+
+            
             +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
                                    header: "Ingredients") {
                                     $0.tag = "ingredientsList"
@@ -105,16 +147,76 @@ class EurekaSimpleViewController: FormViewController {
                                         }
                                     }
                                     
-                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tag1") {
+//                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tag1") {
+//                                        $0.rowLeft = PushRow<String>(){
+//                                            $0.selectorTitle = "Category"
+//                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
+//                                            $0.value = "Pantry"
+//                                        }
+//                                        $0.rowRight = TextRow(){
+//                                            $0.placeholder = "Quantity Ingredient"
+//                                        }
+//                                    }
+                                    
+                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tagP") {
+                                        $0.hidden = Condition.function(["switchRowTag"], { form in
+                                            return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                                        })
+                                        $0.rowLeft = PushRow<String>(){
+                                            $0.selectorTitle = "Category"
+                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
+                                            $0.value = "Meat"
+                                        }
+                                        $0.rowRight = TextRow(){
+                                            $0.value = (form.rowBy(tag: "leanProtein") as? PushRow)?.value
+                                    }
+                                    }
+                                    
+                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tagC") {
+                                        $0.hidden = Condition.function(["switchRowTag"], { form in
+                                            return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                                        })
+                                        $0.rowLeft = PushRow<String>(){
+                                            $0.selectorTitle = "Category"
+                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
+                                            $0.value = "Produce"
+                                        }
+                                        $0.rowRight = TextRow(){
+                                            $0.value = (form.rowBy(tag: "healthyCarb") as? PushRow)?.value
+                                        }
+                                    }
+                                    
+                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tagF") {
+                                        $0.hidden = Condition.function(["switchRowTag"], { form in
+                                            return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                                        })
                                         $0.rowLeft = PushRow<String>(){
                                             $0.selectorTitle = "Category"
                                             $0.options = ["Pantry","Produce","Dairy","Meat"]
                                             $0.value = "Pantry"
                                         }
                                         $0.rowRight = TextRow(){
-                                            $0.placeholder = "Quantity Ingredient"
+                                            $0.value = (form.rowBy(tag: "healthyFats") as? PushRow)?.value
+                                        }
+                                    }.cellUpdate { cell, row in
+                                        
+                                    }
+                                    
+
+                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tagV") {
+                                        $0.hidden = Condition.function(["switchRowTag"], { form in
+                                            return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                                        })
+                                        $0.rowLeft = PushRow<String>(){
+                                            $0.selectorTitle = "Category"
+                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
+                                            $0.value = "Produce"
+                                        }
+                                        $0.rowRight = TextRow(){
+                                            $0.value = (form.rowBy(tag: "veggies") as? PushRow)?.value
                                         }
                                     }
+                                    
                             
                                     
             }
@@ -124,6 +226,7 @@ class EurekaSimpleViewController: FormViewController {
                 row.title = "Save"
                 row.cell.tintColor = .white
                 row.cell.backgroundColor = .gray
+                row.cell.layer.cornerRadius = 2
                 }.onCellSelection{cell,row in
                     self.save()
         }
@@ -134,7 +237,7 @@ class EurekaSimpleViewController: FormViewController {
         let formvalues = self.form.values()
         // print(formvalues[FormItems.name] as! String)
       //  print(formvalues)
-        var mealType = formvalues[FormItems.mealType] as? String
+        let mealType = formvalues[FormItems.mealType] as? String
         var meal: Meal.MealType = Meal.MealType.Breakfast
         if mealType == "Breakfast" {
             meal = Meal.MealType.Breakfast
@@ -145,7 +248,6 @@ class EurekaSimpleViewController: FormViewController {
         }
         
         var list = [FoodItem]()
-        print(formvalues["ingredientsList"])
         let values : [SplitRowValue] = formvalues["ingredientsList"] as! [SplitRowValue<String, String>]
     
         for entry in values {
@@ -154,7 +256,7 @@ class EurekaSimpleViewController: FormViewController {
             var lineArr = text.lowercased().components(separatedBy: " ")
             let quantity = lineArr[0] + " " + lineArr[1]
             let areaType = area.lowercased() == "produce" ? FoodItem.FoodType.Produce : area.lowercased() == "dairy" ? FoodItem.FoodType.Dairy : area.lowercased() == "meat" || area.lowercased() == "fish" ? FoodItem.FoodType.Meat : FoodItem.FoodType.Pantry
-            let food = lineArr[2]
+            let food = lineArr[2..<lineArr.count].joined(separator: " ")
             let item = FoodItem(name: food, price: 0.00, quantity: quantity, foodType: areaType)
             list.insert(item, at: 0)
             

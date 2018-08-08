@@ -64,7 +64,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVh-Rm-KSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="266.71664167916043"/>
+            <point key="canvasLocation" x="1182" y="282"/>
         </scene>
         <!--Grocery List-->
         <scene sceneID="XLl-0i-OUn">
@@ -122,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5L-AZ-MCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-189.59999999999999" y="266.71664167916043"/>
+            <point key="canvasLocation" x="10" y="955"/>
         </scene>
         <!--ChooseMeals-->
         <scene sceneID="vht-Jf-Zc0">
@@ -133,11 +133,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" id="7J1-Jy-HLg">
-                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" rowHeight="55" id="7J1-Jy-HLg">
+                                <rect key="frame" x="0.0" y="50" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MealCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7J1-Jy-HLg" id="M46-xC-blX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -166,7 +166,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SU5-6H-GJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880.8" y="1001.649175412294"/>
+            <point key="canvasLocation" x="-1316" y="1178"/>
         </scene>
         <!--Create A Meal-->
         <scene sceneID="Kfg-Va-kTr">
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qed-hl-CAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528.8" y="1689.8050974512746"/>
+            <point key="canvasLocation" x="2604" y="1424"/>
         </scene>
         <!--Create Meal-->
         <scene sceneID="fJV-gT-zZH">
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbp-gz-X3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749" y="1669"/>
+            <point key="canvasLocation" x="-1249" y="1948"/>
         </scene>
         <!--Grocery Nav-->
         <scene sceneID="fan-is-BP5">
@@ -332,7 +332,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZU-4i-ISn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="532.98350824587715"/>
+            <point key="canvasLocation" x="2604" y="281"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="1pi-45-a8Y">
@@ -405,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MX9-JW-If5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4172" y="1421.7391304347827"/>
+            <point key="canvasLocation" x="1257" y="1582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AeA-Tl-ODH">
@@ -433,11 +433,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVa-qa-Coc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.60000000000002" y="1001.649175412294"/>
+            <point key="canvasLocation" x="-1316" y="320"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ftD-wK-qlI"/>
+        <segue reference="3rW-TX-v6Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

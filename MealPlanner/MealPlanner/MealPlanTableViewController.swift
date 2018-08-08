@@ -3,10 +3,12 @@
 //  MealPlanner
 //
 //  Created by Vivek Rao on 6/20/18.
+//  Edited by Eleni Georgiou
 //  Copyright © 2018 Eleni Georgiou. All rights reserved.
 //
 
 import UIKit
+
 
 class MealPlanTableViewController: UITableViewController {
     

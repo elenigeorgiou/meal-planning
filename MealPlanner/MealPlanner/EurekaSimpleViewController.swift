@@ -93,7 +93,10 @@ class EurekaSimpleViewController: FormViewController {
                 $0.selectorTitle = "Choose a Lean Protein"
                 $0.options = ["4 oz Chicken Breast","2 whole eggs","5 oz salmon", "2 slices turkey bacon", "5 oz cod", "1/2 cup black beans"]
                 $0.value = "4 oz chicken breast"    // initially selected
-            }
+                }.onChange({ (row) in
+                    ((self.form.rowBy(tag: "tagP")) as? SplitRow<PushRow<String>, TextRow>)?.updateCell()
+                })
+            
             <<< PushRow<String>("healthyCarb"){
                 $0.hidden = Condition.function(["switchRowTag"], { form in
                     return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
@@ -102,7 +105,10 @@ class EurekaSimpleViewController: FormViewController {
                 $0.selectorTitle = "Choose a Whole Grain or Starch"
                 $0.options = ["1/2 cup oats","1/2 cup sweet potato","1 slice whole grain bread"]
                 $0.value = "1/2 cup sweet potato"    // initially selected
-            }
+                }.onChange({ (row) in
+                    ((self.form.rowBy(tag: "tagC")) as? SplitRow<PushRow<String>, TextRow>)?.updateCell()
+                })
+            
             <<< PushRow<String>("veggies"){
                 $0.hidden = Condition.function(["switchRowTag"], { form in
                     return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
@@ -111,7 +117,11 @@ class EurekaSimpleViewController: FormViewController {
                 $0.selectorTitle = "Choose Vegetables and Fruit"
                 $0.options = ["1 cup spinach","1 cup cucumber","1 tomato", "1/2 cup bell pepper", "1/2 cup berries", "1 whole apple", "1 banana", "1/2 cup mushrooms", "1 cup arugula"]
                 $0.value = "1 cup spinach" //, "1/2 cup bell pepper">    // initially selected
-            }
+                }.onChange({ (row) in
+                    ((self.form.rowBy(tag: "tagV")) as? SplitRow<PushRow<String>, TextRow>)?.updateCell()
+                })
+            
+            
             <<< PushRow<String>("healthyFats"){
                 $0.hidden = Condition.function(["switchRowTag"], { form in
                     return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
@@ -120,7 +130,9 @@ class EurekaSimpleViewController: FormViewController {
                 $0.selectorTitle = "Choose a Healthy Fat"
                 $0.options = ["1 tbsp almond butter","60 grams avocado","1 tbsp olive oil", "1 tbsp coconut oil"]
                 $0.value = "60 grams avocado"    // initially selected
-            }
+                }.onChange({ (row) in
+                    ((self.form.rowBy(tag: "tagF")) as? SplitRow<PushRow<String>, TextRow>)?.updateCell()
+                })
 
             
             +++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
@@ -145,18 +157,7 @@ class EurekaSimpleViewController: FormViewController {
                                                     $0.placeholder = "Quantity Ingredient"
                                                 }
                                         }
-                                    }
-                                    
-//                                    $0 <<< SplitRow<PushRow<String>, TextRow>("tag1") {
-//                                        $0.rowLeft = PushRow<String>(){
-//                                            $0.selectorTitle = "Category"
-//                                            $0.options = ["Pantry","Produce","Dairy","Meat"]
-//                                            $0.value = "Pantry"
-//                                        }
-//                                        $0.rowRight = TextRow(){
-//                                            $0.placeholder = "Quantity Ingredient"
-//                                        }
-//                                    }
+                                        }
                                     
                                     $0 <<< SplitRow<PushRow<String>, TextRow>("tagP") {
                                         $0.hidden = Condition.function(["switchRowTag"], { form in
@@ -169,7 +170,9 @@ class EurekaSimpleViewController: FormViewController {
                                         }
                                         $0.rowRight = TextRow(){
                                             $0.value = (form.rowBy(tag: "leanProtein") as? PushRow)?.value
-                                    }
+                                            }.cellUpdate({ (cell, row) in
+                                                row.value = (self.form.rowBy(tag: "leanProtein") as? PushRow)?.value
+                                            })
                                     }
                                     
                                     $0 <<< SplitRow<PushRow<String>, TextRow>("tagC") {
@@ -183,7 +186,9 @@ class EurekaSimpleViewController: FormViewController {
                                         }
                                         $0.rowRight = TextRow(){
                                             $0.value = (form.rowBy(tag: "healthyCarb") as? PushRow)?.value
-                                        }
+                                            }.cellUpdate({ (cell, row) in
+                                                row.value = (self.form.rowBy(tag: "healthyCarb") as? PushRow)?.value
+                                            })
                                     }
                                     
                                     $0 <<< SplitRow<PushRow<String>, TextRow>("tagF") {
@@ -197,9 +202,9 @@ class EurekaSimpleViewController: FormViewController {
                                         }
                                         $0.rowRight = TextRow(){
                                             $0.value = (form.rowBy(tag: "healthyFats") as? PushRow)?.value
-                                        }
-                                    }.cellUpdate { cell, row in
-                                        
+                                            }.cellUpdate({ (cell, row) in
+                                                row.value = (self.form.rowBy(tag: "healthyFats") as? PushRow)?.value
+                                            })
                                     }
                                     
 
@@ -207,6 +212,7 @@ class EurekaSimpleViewController: FormViewController {
                                         $0.hidden = Condition.function(["switchRowTag"], { form in
                                             return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
                                         })
+                                        
                                         $0.rowLeft = PushRow<String>(){
                                             $0.selectorTitle = "Category"
                                             $0.options = ["Pantry","Produce","Dairy","Meat"]
@@ -214,7 +220,11 @@ class EurekaSimpleViewController: FormViewController {
                                         }
                                         $0.rowRight = TextRow(){
                                             $0.value = (form.rowBy(tag: "veggies") as? PushRow)?.value
-                                        }
+                                            }.cellUpdate({ (cell, row) in
+                                                row.value = (self.form.rowBy(tag: "veggies") as? PushRow)?.value
+                                            }).onChange({ (row) in
+                                                row.value = (self.form.rowBy(tag: "veggies") as? PushRow)?.value
+                                            })
                                     }
                                     
                             
@@ -234,9 +244,8 @@ class EurekaSimpleViewController: FormViewController {
     }
     
     func save() {
+        
         let formvalues = self.form.values()
-        // print(formvalues[FormItems.name] as! String)
-      //  print(formvalues)
         let mealType = formvalues[FormItems.mealType] as? String
         var meal: Meal.MealType = Meal.MealType.Breakfast
         if mealType == "Breakfast" {

@@ -246,17 +246,20 @@ class MealPlanDao {
             let chickenSalad: Meal = Meal()
             chickenSalad.name = "Dinner Rotisserie Chicken Salad"
             chickenSalad.mealType = Meal.MealType.Dinner
+            chickenSalad.image = "default.png"
             meals.updateValue(chickenSalad, forKey: chickenSalad.name!)
             dinnerMeals.updateValue(chickenSalad, forKey: chickenSalad.name!)
             
             let chickenParm: Meal = Meal()
             chickenParm.name = "Chicken Parm Sub"
             chickenParm.mealType = Meal.MealType.Dinner
+            chickenParm.image = "default.png"
             meals.updateValue(chickenParm, forKey: chickenParm.name!)
             dinnerMeals.updateValue(chickenParm, forKey: chickenParm.name!)
             
             let grilledChicken: Meal = Meal()
             grilledChicken.name = "Grilled Chicken"
+            grilledChicken.image = "default.png"
             grilledChicken.mealType = Meal.MealType.Dinner
             meals.updateValue(grilledChicken, forKey: grilledChicken.name!)
             dinnerMeals.updateValue(grilledChicken, forKey: grilledChicken.name!)
